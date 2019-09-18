@@ -127,6 +127,14 @@
     <Compile Include="IndividualTransaction.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ist2gqDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ist2gqDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ist2gqDataSet.vb">
+      <DependentUpon>ist2gqDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +242,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ist2gqDataSet.xsc">
+      <DependentUpon>ist2gqDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ist2gqDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ist2gqDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ist2gqDataSet.xss">
+      <DependentUpon>ist2gqDataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

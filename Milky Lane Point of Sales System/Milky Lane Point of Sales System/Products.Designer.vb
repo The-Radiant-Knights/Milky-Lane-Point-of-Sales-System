@@ -22,6 +22,7 @@ Partial Class Products
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.LabelProducts = New System.Windows.Forms.Label()
         Me.ButtonRemoveProduct = New System.Windows.Forms.Button()
         Me.ButtonUpdate = New System.Windows.Forms.Button()
@@ -30,7 +31,18 @@ Partial Class Products
         Me.TextBoxSearch = New System.Windows.Forms.TextBox()
         Me.ButtonSearch = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
+        Me.TblProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TblProductTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblProductTableAdapter()
+        Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
+        Me.ProductIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AmountSoldDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ButtonRefresh = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelProducts
@@ -95,20 +107,81 @@ Partial Class Products
         'ButtonSearch
         '
         Me.ButtonSearch.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSearch.Location = New System.Drawing.Point(450, 45)
+        Me.ButtonSearch.Location = New System.Drawing.Point(477, 45)
         Me.ButtonSearch.Name = "ButtonSearch"
-        Me.ButtonSearch.Size = New System.Drawing.Size(139, 33)
+        Me.ButtonSearch.Size = New System.Drawing.Size(112, 33)
         Me.ButtonSearch.TabIndex = 9
         Me.ButtonSearch.Text = "Search"
         Me.ButtonSearch.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProductIDDataGridViewTextBoxColumn, Me.ProductDescriptionDataGridViewTextBoxColumn, Me.PriceDataGridViewTextBoxColumn, Me.AmountSoldDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.TblProductBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(31, 84)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(558, 284)
         Me.DataGridView1.TabIndex = 8
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TblProductBindingSource
+        '
+        Me.TblProductBindingSource.DataMember = "tblProduct"
+        Me.TblProductBindingSource.DataSource = Me.Ist2gqDataSet
+        '
+        'TblProductTableAdapter
+        '
+        Me.TblProductTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.tblCustomerTableAdapter = Nothing
+        Me.TableAdapterManager.tblInvoiceTableAdapter = Nothing
+        Me.TableAdapterManager.tblProductTableAdapter = Me.TblProductTableAdapter
+        Me.TableAdapterManager.tblStaffTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'ProductIDDataGridViewTextBoxColumn
+        '
+        Me.ProductIDDataGridViewTextBoxColumn.DataPropertyName = "Product_ID"
+        Me.ProductIDDataGridViewTextBoxColumn.HeaderText = "Product_ID"
+        Me.ProductIDDataGridViewTextBoxColumn.Name = "ProductIDDataGridViewTextBoxColumn"
+        Me.ProductIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProductDescriptionDataGridViewTextBoxColumn
+        '
+        Me.ProductDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Product_Description"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.HeaderText = "Product_Description"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.Name = "ProductDescriptionDataGridViewTextBoxColumn"
+        '
+        'PriceDataGridViewTextBoxColumn
+        '
+        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
+        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Price"
+        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
+        '
+        'AmountSoldDataGridViewTextBoxColumn
+        '
+        Me.AmountSoldDataGridViewTextBoxColumn.DataPropertyName = "Amount_Sold"
+        Me.AmountSoldDataGridViewTextBoxColumn.HeaderText = "Amount_Sold"
+        Me.AmountSoldDataGridViewTextBoxColumn.Name = "AmountSoldDataGridViewTextBoxColumn"
+        '
+        'ButtonRefresh
+        '
+        Me.ButtonRefresh.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRefresh.Location = New System.Drawing.Point(343, 45)
+        Me.ButtonRefresh.Name = "ButtonRefresh"
+        Me.ButtonRefresh.Size = New System.Drawing.Size(114, 33)
+        Me.ButtonRefresh.TabIndex = 16
+        Me.ButtonRefresh.Text = "Refresh"
+        Me.ButtonRefresh.UseVisualStyleBackColor = True
         '
         'Products
         '
@@ -117,6 +190,7 @@ Partial Class Products
         Me.BackgroundImage = Global.Milky_Lane_Point_of_Sales_System.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(618, 439)
+        Me.Controls.Add(Me.ButtonRefresh)
         Me.Controls.Add(Me.LabelProducts)
         Me.Controls.Add(Me.ButtonRemoveProduct)
         Me.Controls.Add(Me.ButtonUpdate)
@@ -129,6 +203,8 @@ Partial Class Products
         Me.Name = "Products"
         Me.Text = "Products"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -142,4 +218,13 @@ Partial Class Products
     Friend WithEvents TextBoxSearch As TextBox
     Friend WithEvents ButtonSearch As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Ist2gqDataSet As ist2gqDataSet
+    Friend WithEvents TblProductBindingSource As BindingSource
+    Friend WithEvents TblProductTableAdapter As ist2gqDataSetTableAdapters.tblProductTableAdapter
+    Friend WithEvents TableAdapterManager As ist2gqDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents ProductIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProductDescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AmountSoldDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ButtonRefresh As Button
 End Class

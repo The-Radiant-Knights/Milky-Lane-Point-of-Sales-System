@@ -22,6 +22,7 @@ Partial Class Staff
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.LabelStaff = New System.Windows.Forms.Label()
         Me.ButtonRemoveStaff = New System.Windows.Forms.Button()
         Me.ButtonUpdate = New System.Windows.Forms.Button()
@@ -30,7 +31,19 @@ Partial Class Staff
         Me.TextBoxSearch = New System.Windows.Forms.TextBox()
         Me.ButtonSearch = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
+        Me.TblStaffBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TblStaffTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblStaffTableAdapter()
+        Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
+        Me.StaffIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StaffLastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StaffFirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StaffPasscodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StaffRoleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ButtonRefresh = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblStaffBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelStaff
@@ -95,20 +108,87 @@ Partial Class Staff
         'ButtonSearch
         '
         Me.ButtonSearch.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSearch.Location = New System.Drawing.Point(431, 42)
+        Me.ButtonSearch.Location = New System.Drawing.Point(455, 42)
         Me.ButtonSearch.Name = "ButtonSearch"
-        Me.ButtonSearch.Size = New System.Drawing.Size(139, 33)
+        Me.ButtonSearch.Size = New System.Drawing.Size(115, 33)
         Me.ButtonSearch.TabIndex = 9
         Me.ButtonSearch.Text = "Search"
         Me.ButtonSearch.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.StaffIDDataGridViewTextBoxColumn, Me.StaffLastNameDataGridViewTextBoxColumn, Me.StaffFirstNameDataGridViewTextBoxColumn, Me.StaffPasscodeDataGridViewTextBoxColumn, Me.StaffRoleDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.TblStaffBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(12, 81)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(558, 284)
         Me.DataGridView1.TabIndex = 8
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TblStaffBindingSource
+        '
+        Me.TblStaffBindingSource.DataMember = "tblStaff"
+        Me.TblStaffBindingSource.DataSource = Me.Ist2gqDataSet
+        '
+        'TblStaffTableAdapter
+        '
+        Me.TblStaffTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.tblCustomerTableAdapter = Nothing
+        Me.TableAdapterManager.tblInvoiceTableAdapter = Nothing
+        Me.TableAdapterManager.tblProductTableAdapter = Nothing
+        Me.TableAdapterManager.tblStaffTableAdapter = Me.TblStaffTableAdapter
+        Me.TableAdapterManager.UpdateOrder = Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'StaffIDDataGridViewTextBoxColumn
+        '
+        Me.StaffIDDataGridViewTextBoxColumn.DataPropertyName = "Staff_ID"
+        Me.StaffIDDataGridViewTextBoxColumn.HeaderText = "Staff_ID"
+        Me.StaffIDDataGridViewTextBoxColumn.Name = "StaffIDDataGridViewTextBoxColumn"
+        Me.StaffIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'StaffLastNameDataGridViewTextBoxColumn
+        '
+        Me.StaffLastNameDataGridViewTextBoxColumn.DataPropertyName = "Staff_LastName"
+        Me.StaffLastNameDataGridViewTextBoxColumn.HeaderText = "Staff_LastName"
+        Me.StaffLastNameDataGridViewTextBoxColumn.Name = "StaffLastNameDataGridViewTextBoxColumn"
+        '
+        'StaffFirstNameDataGridViewTextBoxColumn
+        '
+        Me.StaffFirstNameDataGridViewTextBoxColumn.DataPropertyName = "Staff_FirstName"
+        Me.StaffFirstNameDataGridViewTextBoxColumn.HeaderText = "Staff_FirstName"
+        Me.StaffFirstNameDataGridViewTextBoxColumn.Name = "StaffFirstNameDataGridViewTextBoxColumn"
+        '
+        'StaffPasscodeDataGridViewTextBoxColumn
+        '
+        Me.StaffPasscodeDataGridViewTextBoxColumn.DataPropertyName = "Staff_Passcode"
+        Me.StaffPasscodeDataGridViewTextBoxColumn.HeaderText = "Staff_Passcode"
+        Me.StaffPasscodeDataGridViewTextBoxColumn.Name = "StaffPasscodeDataGridViewTextBoxColumn"
+        '
+        'StaffRoleDataGridViewTextBoxColumn
+        '
+        Me.StaffRoleDataGridViewTextBoxColumn.DataPropertyName = "Staff_Role"
+        Me.StaffRoleDataGridViewTextBoxColumn.HeaderText = "Staff_Role"
+        Me.StaffRoleDataGridViewTextBoxColumn.Name = "StaffRoleDataGridViewTextBoxColumn"
+        '
+        'ButtonRefresh
+        '
+        Me.ButtonRefresh.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRefresh.Location = New System.Drawing.Point(324, 42)
+        Me.ButtonRefresh.Name = "ButtonRefresh"
+        Me.ButtonRefresh.Size = New System.Drawing.Size(115, 33)
+        Me.ButtonRefresh.TabIndex = 16
+        Me.ButtonRefresh.Text = "Refresh"
+        Me.ButtonRefresh.UseVisualStyleBackColor = True
         '
         'Staff
         '
@@ -117,6 +197,7 @@ Partial Class Staff
         Me.BackgroundImage = Global.Milky_Lane_Point_of_Sales_System.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(588, 443)
+        Me.Controls.Add(Me.ButtonRefresh)
         Me.Controls.Add(Me.LabelStaff)
         Me.Controls.Add(Me.ButtonRemoveStaff)
         Me.Controls.Add(Me.ButtonUpdate)
@@ -129,6 +210,8 @@ Partial Class Staff
         Me.Name = "Staff"
         Me.Text = "Staff"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblStaffBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -142,4 +225,14 @@ Partial Class Staff
     Friend WithEvents TextBoxSearch As TextBox
     Friend WithEvents ButtonSearch As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Ist2gqDataSet As ist2gqDataSet
+    Friend WithEvents TblStaffBindingSource As BindingSource
+    Friend WithEvents TblStaffTableAdapter As ist2gqDataSetTableAdapters.tblStaffTableAdapter
+    Friend WithEvents TableAdapterManager As ist2gqDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents StaffIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents StaffLastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents StaffFirstNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents StaffPasscodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents StaffRoleDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ButtonRefresh As Button
 End Class

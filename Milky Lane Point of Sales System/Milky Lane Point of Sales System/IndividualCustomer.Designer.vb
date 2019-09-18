@@ -22,8 +22,11 @@ Partial Class IndividualCustomer
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.LabelCustomer = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.BindingSourceCustomer = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.LabelEmail = New System.Windows.Forms.Label()
         Me.TextBoxContactNumber = New System.Windows.Forms.TextBox()
         Me.labelContactNumber = New System.Windows.Forms.Label()
@@ -38,6 +41,10 @@ Partial Class IndividualCustomer
         Me.ButtonAddCustomer = New System.Windows.Forms.Button()
         Me.ButtonNextCustomer = New System.Windows.Forms.Button()
         Me.ButtonPreviousCustomer = New System.Windows.Forms.Button()
+        Me.TblCustomerTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblCustomerTableAdapter()
+        Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
+        CType(Me.BindingSourceCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelCustomer
@@ -53,10 +60,21 @@ Partial Class IndividualCustomer
         '
         'TextBox2
         '
+        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceCustomer, "Customer_Email", True))
         Me.TextBox2.Location = New System.Drawing.Point(196, 191)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(234, 20)
         Me.TextBox2.TabIndex = 17
+        '
+        'BindingSourceCustomer
+        '
+        Me.BindingSourceCustomer.DataMember = "tblCustomer"
+        Me.BindingSourceCustomer.DataSource = Me.Ist2gqDataSet
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'LabelEmail
         '
@@ -71,6 +89,7 @@ Partial Class IndividualCustomer
         '
         'TextBoxContactNumber
         '
+        Me.TextBoxContactNumber.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceCustomer, "Customer_PhoneNo", True, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "000 000 000", "000 000 000 "))
         Me.TextBoxContactNumber.Location = New System.Drawing.Point(196, 151)
         Me.TextBoxContactNumber.Name = "TextBoxContactNumber"
         Me.TextBoxContactNumber.Size = New System.Drawing.Size(234, 20)
@@ -89,6 +108,7 @@ Partial Class IndividualCustomer
         '
         'TextBoxLastName
         '
+        Me.TextBoxLastName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceCustomer, "Customer_LastName", True))
         Me.TextBoxLastName.Location = New System.Drawing.Point(196, 109)
         Me.TextBoxLastName.Name = "TextBoxLastName"
         Me.TextBoxLastName.Size = New System.Drawing.Size(234, 20)
@@ -107,6 +127,7 @@ Partial Class IndividualCustomer
         '
         'TextBoxFirstName
         '
+        Me.TextBoxFirstName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceCustomer, "Customer_FirstName", True))
         Me.TextBoxFirstName.Location = New System.Drawing.Point(196, 74)
         Me.TextBoxFirstName.Name = "TextBoxFirstName"
         Me.TextBoxFirstName.Size = New System.Drawing.Size(234, 20)
@@ -125,6 +146,7 @@ Partial Class IndividualCustomer
         '
         'TextBoxPoints
         '
+        Me.TextBoxPoints.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceCustomer, "Customer_Points", True))
         Me.TextBoxPoints.Location = New System.Drawing.Point(196, 227)
         Me.TextBoxPoints.Name = "TextBoxPoints"
         Me.TextBoxPoints.Size = New System.Drawing.Size(234, 20)
@@ -148,7 +170,7 @@ Partial Class IndividualCustomer
         Me.ButtonUpdateCustomer.Name = "ButtonUpdateCustomer"
         Me.ButtonUpdateCustomer.Size = New System.Drawing.Size(126, 40)
         Me.ButtonUpdateCustomer.TabIndex = 22
-        Me.ButtonUpdateCustomer.Text = "Update Customer"
+        Me.ButtonUpdateCustomer.Text = "Update/Save  Customer"
         Me.ButtonUpdateCustomer.UseVisualStyleBackColor = True
         '
         'ButtonRemoveCustomer
@@ -191,6 +213,19 @@ Partial Class IndividualCustomer
         Me.ButtonPreviousCustomer.Text = "Previous Customer"
         Me.ButtonPreviousCustomer.UseVisualStyleBackColor = True
         '
+        'TblCustomerTableAdapter
+        '
+        Me.TblCustomerTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.tblCustomerTableAdapter = Me.TblCustomerTableAdapter
+        Me.TableAdapterManager.tblInvoiceTableAdapter = Nothing
+        Me.TableAdapterManager.tblProductTableAdapter = Nothing
+        Me.TableAdapterManager.tblStaffTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'IndividualCustomer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -216,6 +251,8 @@ Partial Class IndividualCustomer
         Me.Controls.Add(Me.LabelFirstName)
         Me.Name = "IndividualCustomer"
         Me.Text = "Customer"
+        CType(Me.BindingSourceCustomer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -237,4 +274,8 @@ Partial Class IndividualCustomer
     Friend WithEvents ButtonAddCustomer As Button
     Friend WithEvents ButtonNextCustomer As Button
     Friend WithEvents ButtonPreviousCustomer As Button
+    Friend WithEvents TblCustomerTableAdapter As ist2gqDataSetTableAdapters.tblCustomerTableAdapter
+    Friend WithEvents TableAdapterManager As ist2gqDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents BindingSourceCustomer As BindingSource
+    Friend WithEvents Ist2gqDataSet As ist2gqDataSet
 End Class

@@ -22,6 +22,7 @@ Partial Class Customer
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.ButtonSearch = New System.Windows.Forms.Button()
         Me.TextBoxSearch = New System.Windows.Forms.TextBox()
@@ -30,23 +31,41 @@ Partial Class Customer
         Me.ButtonUpdate = New System.Windows.Forms.Button()
         Me.ButtonRemoveCustomer = New System.Windows.Forms.Button()
         Me.LabelCustomers = New System.Windows.Forms.Label()
+        Me.CustomerPhoneNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustomerLastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustomerFirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustomerEmailDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CustomerPointsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TblCustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
+        Me.TblCustomerTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblCustomerTableAdapter()
+        Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
+        Me.ButtonRefresh = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblCustomerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CustomerPhoneNoDataGridViewTextBoxColumn, Me.CustomerLastNameDataGridViewTextBoxColumn, Me.CustomerFirstNameDataGridViewTextBoxColumn, Me.CustomerEmailDataGridViewTextBoxColumn, Me.CustomerPointsDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.TblCustomerBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(24, 91)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(558, 284)
         Me.DataGridView1.TabIndex = 0
         '
         'ButtonSearch
         '
         Me.ButtonSearch.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSearch.Location = New System.Drawing.Point(443, 52)
+        Me.ButtonSearch.Location = New System.Drawing.Point(472, 52)
         Me.ButtonSearch.Name = "ButtonSearch"
-        Me.ButtonSearch.Size = New System.Drawing.Size(139, 33)
+        Me.ButtonSearch.Size = New System.Drawing.Size(110, 33)
         Me.ButtonSearch.TabIndex = 1
         Me.ButtonSearch.Text = "Search"
         Me.ButtonSearch.UseVisualStyleBackColor = True
@@ -110,6 +129,74 @@ Partial Class Customer
         Me.LabelCustomers.TabIndex = 7
         Me.LabelCustomers.Text = "Customers:"
         '
+        'CustomerPhoneNoDataGridViewTextBoxColumn
+        '
+        Me.CustomerPhoneNoDataGridViewTextBoxColumn.DataPropertyName = "Customer_PhoneNo"
+        Me.CustomerPhoneNoDataGridViewTextBoxColumn.HeaderText = "Customer_PhoneNo"
+        Me.CustomerPhoneNoDataGridViewTextBoxColumn.Name = "CustomerPhoneNoDataGridViewTextBoxColumn"
+        Me.CustomerPhoneNoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustomerLastNameDataGridViewTextBoxColumn
+        '
+        Me.CustomerLastNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_LastName"
+        Me.CustomerLastNameDataGridViewTextBoxColumn.HeaderText = "Customer_LastName"
+        Me.CustomerLastNameDataGridViewTextBoxColumn.Name = "CustomerLastNameDataGridViewTextBoxColumn"
+        Me.CustomerLastNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustomerFirstNameDataGridViewTextBoxColumn
+        '
+        Me.CustomerFirstNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_FirstName"
+        Me.CustomerFirstNameDataGridViewTextBoxColumn.HeaderText = "Customer_FirstName"
+        Me.CustomerFirstNameDataGridViewTextBoxColumn.Name = "CustomerFirstNameDataGridViewTextBoxColumn"
+        Me.CustomerFirstNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustomerEmailDataGridViewTextBoxColumn
+        '
+        Me.CustomerEmailDataGridViewTextBoxColumn.DataPropertyName = "Customer_Email"
+        Me.CustomerEmailDataGridViewTextBoxColumn.HeaderText = "Customer_Email"
+        Me.CustomerEmailDataGridViewTextBoxColumn.Name = "CustomerEmailDataGridViewTextBoxColumn"
+        Me.CustomerEmailDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustomerPointsDataGridViewTextBoxColumn
+        '
+        Me.CustomerPointsDataGridViewTextBoxColumn.DataPropertyName = "Customer_Points"
+        Me.CustomerPointsDataGridViewTextBoxColumn.HeaderText = "Customer_Points"
+        Me.CustomerPointsDataGridViewTextBoxColumn.Name = "CustomerPointsDataGridViewTextBoxColumn"
+        Me.CustomerPointsDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TblCustomerBindingSource
+        '
+        Me.TblCustomerBindingSource.DataMember = "tblCustomer"
+        Me.TblCustomerBindingSource.DataSource = Me.Ist2gqDataSet
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TblCustomerTableAdapter
+        '
+        Me.TblCustomerTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.tblCustomerTableAdapter = Me.TblCustomerTableAdapter
+        Me.TableAdapterManager.tblInvoiceTableAdapter = Nothing
+        Me.TableAdapterManager.tblProductTableAdapter = Nothing
+        Me.TableAdapterManager.tblStaffTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'ButtonRefresh
+        '
+        Me.ButtonRefresh.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRefresh.Location = New System.Drawing.Point(336, 52)
+        Me.ButtonRefresh.Name = "ButtonRefresh"
+        Me.ButtonRefresh.Size = New System.Drawing.Size(110, 33)
+        Me.ButtonRefresh.TabIndex = 8
+        Me.ButtonRefresh.Text = "Refresh"
+        Me.ButtonRefresh.UseVisualStyleBackColor = True
+        '
         'Customer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
@@ -117,6 +204,7 @@ Partial Class Customer
         Me.BackgroundImage = Global.Milky_Lane_Point_of_Sales_System.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(609, 459)
+        Me.Controls.Add(Me.ButtonRefresh)
         Me.Controls.Add(Me.LabelCustomers)
         Me.Controls.Add(Me.ButtonRemoveCustomer)
         Me.Controls.Add(Me.ButtonUpdate)
@@ -129,6 +217,8 @@ Partial Class Customer
         Me.Name = "Customer"
         Me.Text = "Customer"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblCustomerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -142,4 +232,14 @@ Partial Class Customer
     Friend WithEvents ButtonUpdate As Button
     Friend WithEvents ButtonRemoveCustomer As Button
     Friend WithEvents LabelCustomers As Label
+    Friend WithEvents Ist2gqDataSet As ist2gqDataSet
+    Friend WithEvents TblCustomerBindingSource As BindingSource
+    Friend WithEvents TblCustomerTableAdapter As ist2gqDataSetTableAdapters.tblCustomerTableAdapter
+    Friend WithEvents TableAdapterManager As ist2gqDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents CustomerPhoneNoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustomerLastNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustomerFirstNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustomerEmailDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustomerPointsDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ButtonRefresh As Button
 End Class

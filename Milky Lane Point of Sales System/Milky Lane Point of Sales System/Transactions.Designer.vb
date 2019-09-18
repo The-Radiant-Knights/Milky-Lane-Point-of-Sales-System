@@ -22,6 +22,7 @@ Partial Class Transactions
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.LabelTransactions = New System.Windows.Forms.Label()
         Me.ButtonRemoveCustomer = New System.Windows.Forms.Button()
         Me.ButtonUpdate = New System.Windows.Forms.Button()
@@ -31,7 +32,19 @@ Partial Class Transactions
         Me.ButtonSearch = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ButtonRefresh = New System.Windows.Forms.Button()
+        Me.InvoiceNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InvoiceAmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AmountPaidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InvoiceDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StaffIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TblInvoiceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
+        Me.TblInvoiceTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblInvoiceTableAdapter()
+        Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblInvoiceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelTransactions
@@ -96,16 +109,19 @@ Partial Class Transactions
         'ButtonSearch
         '
         Me.ButtonSearch.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSearch.Location = New System.Drawing.Point(446, 55)
+        Me.ButtonSearch.Location = New System.Drawing.Point(473, 55)
         Me.ButtonSearch.Name = "ButtonSearch"
-        Me.ButtonSearch.Size = New System.Drawing.Size(139, 33)
+        Me.ButtonSearch.Size = New System.Drawing.Size(112, 33)
         Me.ButtonSearch.TabIndex = 9
         Me.ButtonSearch.Text = "Search"
         Me.ButtonSearch.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
+        Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.InvoiceNoDataGridViewTextBoxColumn, Me.InvoiceAmountDataGridViewTextBoxColumn, Me.AmountPaidDataGridViewTextBoxColumn, Me.InvoiceDateDataGridViewTextBoxColumn, Me.StaffIDDataGridViewTextBoxColumn})
+        Me.DataGridView1.DataSource = Me.TblInvoiceBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(27, 94)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(558, 284)
@@ -118,6 +134,70 @@ Partial Class Transactions
         Me.TextBox1.Size = New System.Drawing.Size(176, 20)
         Me.TextBox1.TabIndex = 16
         '
+        'ButtonRefresh
+        '
+        Me.ButtonRefresh.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRefresh.Location = New System.Drawing.Point(339, 55)
+        Me.ButtonRefresh.Name = "ButtonRefresh"
+        Me.ButtonRefresh.Size = New System.Drawing.Size(110, 33)
+        Me.ButtonRefresh.TabIndex = 17
+        Me.ButtonRefresh.Text = "Refresh"
+        Me.ButtonRefresh.UseVisualStyleBackColor = True
+        '
+        'InvoiceNoDataGridViewTextBoxColumn
+        '
+        Me.InvoiceNoDataGridViewTextBoxColumn.DataPropertyName = "Invoice_No"
+        Me.InvoiceNoDataGridViewTextBoxColumn.HeaderText = "Invoice_No"
+        Me.InvoiceNoDataGridViewTextBoxColumn.Name = "InvoiceNoDataGridViewTextBoxColumn"
+        Me.InvoiceNoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'InvoiceAmountDataGridViewTextBoxColumn
+        '
+        Me.InvoiceAmountDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Amount"
+        Me.InvoiceAmountDataGridViewTextBoxColumn.HeaderText = "Invoice_Amount"
+        Me.InvoiceAmountDataGridViewTextBoxColumn.Name = "InvoiceAmountDataGridViewTextBoxColumn"
+        '
+        'AmountPaidDataGridViewTextBoxColumn
+        '
+        Me.AmountPaidDataGridViewTextBoxColumn.DataPropertyName = "Amount_Paid"
+        Me.AmountPaidDataGridViewTextBoxColumn.HeaderText = "Amount_Paid"
+        Me.AmountPaidDataGridViewTextBoxColumn.Name = "AmountPaidDataGridViewTextBoxColumn"
+        '
+        'InvoiceDateDataGridViewTextBoxColumn
+        '
+        Me.InvoiceDateDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Date"
+        Me.InvoiceDateDataGridViewTextBoxColumn.HeaderText = "Invoice_Date"
+        Me.InvoiceDateDataGridViewTextBoxColumn.Name = "InvoiceDateDataGridViewTextBoxColumn"
+        '
+        'StaffIDDataGridViewTextBoxColumn
+        '
+        Me.StaffIDDataGridViewTextBoxColumn.DataPropertyName = "Staff_ID"
+        Me.StaffIDDataGridViewTextBoxColumn.HeaderText = "Staff_ID"
+        Me.StaffIDDataGridViewTextBoxColumn.Name = "StaffIDDataGridViewTextBoxColumn"
+        '
+        'TblInvoiceBindingSource
+        '
+        Me.TblInvoiceBindingSource.DataMember = "tblInvoice"
+        Me.TblInvoiceBindingSource.DataSource = Me.Ist2gqDataSet
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TblInvoiceTableAdapter
+        '
+        Me.TblInvoiceTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.tblCustomerTableAdapter = Nothing
+        Me.TableAdapterManager.tblInvoiceTableAdapter = Me.TblInvoiceTableAdapter
+        Me.TableAdapterManager.tblProductTableAdapter = Nothing
+        Me.TableAdapterManager.tblStaffTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'Transactions
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
@@ -125,6 +205,7 @@ Partial Class Transactions
         Me.BackgroundImage = Global.Milky_Lane_Point_of_Sales_System.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(615, 466)
+        Me.Controls.Add(Me.ButtonRefresh)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.LabelTransactions)
         Me.Controls.Add(Me.ButtonRemoveCustomer)
@@ -138,6 +219,8 @@ Partial Class Transactions
         Me.Name = "Transactions"
         Me.Text = "Transactions"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblInvoiceBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -152,4 +235,14 @@ Partial Class Transactions
     Friend WithEvents ButtonSearch As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Ist2gqDataSet As ist2gqDataSet
+    Friend WithEvents TblInvoiceBindingSource As BindingSource
+    Friend WithEvents TblInvoiceTableAdapter As ist2gqDataSetTableAdapters.tblInvoiceTableAdapter
+    Friend WithEvents TableAdapterManager As ist2gqDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents InvoiceNoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents InvoiceAmountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents AmountPaidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents InvoiceDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents StaffIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ButtonRefresh As Button
 End Class

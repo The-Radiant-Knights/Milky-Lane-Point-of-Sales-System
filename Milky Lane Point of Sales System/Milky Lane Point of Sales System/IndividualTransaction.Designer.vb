@@ -22,6 +22,7 @@ Partial Class IndividualTransaction
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.LabelTransaction = New System.Windows.Forms.Label()
         Me.TextBoxStaffID = New System.Windows.Forms.TextBox()
@@ -31,11 +32,17 @@ Partial Class IndividualTransaction
         Me.LabelAmountPaid = New System.Windows.Forms.Label()
         Me.TextBoxAmount = New System.Windows.Forms.TextBox()
         Me.LabelFirstAmount = New System.Windows.Forms.Label()
-        Me.ButtonPreviousTransaction = New System.Windows.Forms.Button()
         Me.ButtonNextTransaction = New System.Windows.Forms.Button()
         Me.ButtonAddTransaction = New System.Windows.Forms.Button()
         Me.ButtonRemoveTransaction = New System.Windows.Forms.Button()
         Me.ButtonUpdateTransaction = New System.Windows.Forms.Button()
+        Me.ButtonPreviousTransaction = New System.Windows.Forms.Button()
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
+        Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
+        Me.TblInvoiceTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblInvoiceTableAdapter()
+        Me.BindingSourceInvoice = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSourceInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DateTimePicker
@@ -121,16 +128,6 @@ Partial Class IndividualTransaction
         Me.LabelFirstAmount.TabIndex = 21
         Me.LabelFirstAmount.Text = "Amount:"
         '
-        'ButtonPreviousTransaction
-        '
-        Me.ButtonPreviousTransaction.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonPreviousTransaction.Location = New System.Drawing.Point(100, 295)
-        Me.ButtonPreviousTransaction.Name = "ButtonPreviousTransaction"
-        Me.ButtonPreviousTransaction.Size = New System.Drawing.Size(129, 40)
-        Me.ButtonPreviousTransaction.TabIndex = 35
-        Me.ButtonPreviousTransaction.Text = "Previous Transaction"
-        Me.ButtonPreviousTransaction.UseVisualStyleBackColor = True
-        '
         'ButtonNextTransaction
         '
         Me.ButtonNextTransaction.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -168,8 +165,36 @@ Partial Class IndividualTransaction
         Me.ButtonUpdateTransaction.Name = "ButtonUpdateTransaction"
         Me.ButtonUpdateTransaction.Size = New System.Drawing.Size(126, 40)
         Me.ButtonUpdateTransaction.TabIndex = 31
-        Me.ButtonUpdateTransaction.Text = "Update Transaction"
+        Me.ButtonUpdateTransaction.Text = "Update/Save Transaction"
         Me.ButtonUpdateTransaction.UseVisualStyleBackColor = True
+        '
+        'ButtonPreviousTransaction
+        '
+        Me.ButtonPreviousTransaction.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonPreviousTransaction.Location = New System.Drawing.Point(100, 295)
+        Me.ButtonPreviousTransaction.Name = "ButtonPreviousTransaction"
+        Me.ButtonPreviousTransaction.Size = New System.Drawing.Size(129, 40)
+        Me.ButtonPreviousTransaction.TabIndex = 35
+        Me.ButtonPreviousTransaction.Text = "Previous Transaction"
+        Me.ButtonPreviousTransaction.UseVisualStyleBackColor = True
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.tblCustomerTableAdapter = Nothing
+        Me.TableAdapterManager.tblInvoiceTableAdapter = Me.TblInvoiceTableAdapter
+        Me.TableAdapterManager.tblProductTableAdapter = Nothing
+        Me.TableAdapterManager.tblStaffTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'TblInvoiceTableAdapter
+        '
+        Me.TblInvoiceTableAdapter.ClearBeforeFill = True
         '
         'IndividualTransaction
         '
@@ -195,6 +220,8 @@ Partial Class IndividualTransaction
         Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "IndividualTransaction"
         Me.Text = "Transaction"
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSourceInvoice, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -209,9 +236,13 @@ Partial Class IndividualTransaction
     Friend WithEvents LabelAmountPaid As Label
     Friend WithEvents TextBoxAmount As TextBox
     Friend WithEvents LabelFirstAmount As Label
-    Friend WithEvents ButtonPreviousTransaction As Button
     Friend WithEvents ButtonNextTransaction As Button
     Friend WithEvents ButtonAddTransaction As Button
     Friend WithEvents ButtonRemoveTransaction As Button
     Friend WithEvents ButtonUpdateTransaction As Button
+    Friend WithEvents ButtonPreviousTransaction As Button
+    Friend WithEvents Ist2gqDataSet As ist2gqDataSet
+    Friend WithEvents TableAdapterManager As ist2gqDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents TblInvoiceTableAdapter As ist2gqDataSetTableAdapters.tblInvoiceTableAdapter
+    Friend WithEvents BindingSourceInvoice As BindingSource
 End Class
