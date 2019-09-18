@@ -46,6 +46,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MilkyLaneLogo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -175,6 +178,12 @@
     <Compile Include="Sales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SplashScreen.Designer.vb">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Staff.Designer.vb">
       <DependentUpon>Staff.vb</DependentUpon>
     </Compile>
@@ -234,6 +243,9 @@
     <EmbeddedResource Include="Sales.resx">
       <DependentUpon>Sales.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Staff.resx">
       <DependentUpon>Staff.vb</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +281,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MilkyLaneLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MilkyLaneLogo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

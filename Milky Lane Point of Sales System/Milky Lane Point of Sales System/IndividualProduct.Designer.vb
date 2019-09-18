@@ -30,6 +30,8 @@ Partial Class IndividualProduct
         Me.ButtonUpdateProduct = New System.Windows.Forms.Button()
         Me.LabelProduct = New System.Windows.Forms.Label()
         Me.TextBoxID = New System.Windows.Forms.TextBox()
+        Me.BindingSourceProduct = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ist2gqDataSet1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.LabelID = New System.Windows.Forms.Label()
         Me.TextBoxAmountSold = New System.Windows.Forms.TextBox()
         Me.labelAmountSold = New System.Windows.Forms.Label()
@@ -37,12 +39,10 @@ Partial Class IndividualProduct
         Me.LabelLastPrice = New System.Windows.Forms.Label()
         Me.TextBoxDescription = New System.Windows.Forms.TextBox()
         Me.LabelFirstDescription = New System.Windows.Forms.Label()
-        Me.Ist2gqDataSet1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.TableAdapterManager1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.TblProductTableAdapter1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblProductTableAdapter()
-        Me.BindingSourceProduct = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.Ist2gqDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSourceProduct, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonPreviousProduct
@@ -92,7 +92,7 @@ Partial Class IndividualProduct
         Me.ButtonUpdateProduct.Name = "ButtonUpdateProduct"
         Me.ButtonUpdateProduct.Size = New System.Drawing.Size(126, 40)
         Me.ButtonUpdateProduct.TabIndex = 38
-        Me.ButtonUpdateProduct.Text = "Update Product"
+        Me.ButtonUpdateProduct.Text = "Update/Save Product"
         Me.ButtonUpdateProduct.UseVisualStyleBackColor = True
         '
         'LabelProduct
@@ -114,6 +114,16 @@ Partial Class IndividualProduct
         Me.TextBoxID.Name = "TextBoxID"
         Me.TextBoxID.Size = New System.Drawing.Size(234, 20)
         Me.TextBoxID.TabIndex = 28
+        '
+        'BindingSourceProduct
+        '
+        Me.BindingSourceProduct.DataMember = "tblProduct"
+        Me.BindingSourceProduct.DataSource = Me.Ist2gqDataSet1
+        '
+        'Ist2gqDataSet1
+        '
+        Me.Ist2gqDataSet1.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'LabelID
         '
@@ -184,11 +194,6 @@ Partial Class IndividualProduct
         Me.LabelFirstDescription.TabIndex = 43
         Me.LabelFirstDescription.Text = "Description:"
         '
-        'Ist2gqDataSet1
-        '
-        Me.Ist2gqDataSet1.DataSetName = "ist2gqDataSet"
-        Me.Ist2gqDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'TableAdapterManager1
         '
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
@@ -201,11 +206,6 @@ Partial Class IndividualProduct
         'TblProductTableAdapter1
         '
         Me.TblProductTableAdapter1.ClearBeforeFill = True
-        '
-        'BindingSourceProduct
-        '
-        Me.BindingSourceProduct.DataMember = "tblProduct"
-        Me.BindingSourceProduct.DataSource = Me.Ist2gqDataSet1
         '
         'IndividualProduct
         '
@@ -231,8 +231,8 @@ Partial Class IndividualProduct
         Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "IndividualProduct"
         Me.Text = "Product"
-        CType(Me.Ist2gqDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSourceProduct, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

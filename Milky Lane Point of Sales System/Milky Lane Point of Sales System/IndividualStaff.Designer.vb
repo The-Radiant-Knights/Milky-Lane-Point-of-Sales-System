@@ -22,6 +22,7 @@ Partial Class IndividualStaff
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.ButtonPreviousEmployee = New System.Windows.Forms.Button()
         Me.ButtonNextEmployee = New System.Windows.Forms.Button()
         Me.ButtonAddEmployee = New System.Windows.Forms.Button()
@@ -38,6 +39,12 @@ Partial Class IndividualStaff
         Me.TextBoxID = New System.Windows.Forms.TextBox()
         Me.LabelID = New System.Windows.Forms.Label()
         Me.LabelPassword = New System.Windows.Forms.Label()
+        Me.Ist2gqDataSet1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
+        Me.TableAdapterManager1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
+        Me.TblStaffTableAdapter1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblStaffTableAdapter()
+        Me.BindingSourceStaff = New System.Windows.Forms.BindingSource(Me.components)
+        CType(Me.Ist2gqDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BindingSourceStaff, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonPreviousEmployee
@@ -87,7 +94,7 @@ Partial Class IndividualStaff
         Me.ButtonUpdateEmployee.Name = "ButtonUpdateEmployee"
         Me.ButtonUpdateEmployee.Size = New System.Drawing.Size(126, 40)
         Me.ButtonUpdateEmployee.TabIndex = 37
-        Me.ButtonUpdateEmployee.Text = "Update Employee"
+        Me.ButtonUpdateEmployee.Text = "Update/Save Employee"
         Me.ButtonUpdateEmployee.UseVisualStyleBackColor = True
         '
         'LabelRoles
@@ -103,6 +110,7 @@ Partial Class IndividualStaff
         '
         'TextBoxRole
         '
+        Me.TextBoxRole.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceStaff, "Staff_Role", True))
         Me.TextBoxRole.Location = New System.Drawing.Point(175, 221)
         Me.TextBoxRole.Name = "TextBoxRole"
         Me.TextBoxRole.Size = New System.Drawing.Size(234, 20)
@@ -121,6 +129,7 @@ Partial Class IndividualStaff
         '
         'TextBoxPassword
         '
+        Me.TextBoxPassword.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceStaff, "Staff_Passcode", True))
         Me.TextBoxPassword.Location = New System.Drawing.Point(175, 185)
         Me.TextBoxPassword.Name = "TextBoxPassword"
         Me.TextBoxPassword.Size = New System.Drawing.Size(234, 20)
@@ -128,6 +137,7 @@ Partial Class IndividualStaff
         '
         'TextBoxFirstName
         '
+        Me.TextBoxFirstName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceStaff, "Staff_FirstName", True))
         Me.TextBoxFirstName.Location = New System.Drawing.Point(175, 145)
         Me.TextBoxFirstName.Name = "TextBoxFirstName"
         Me.TextBoxFirstName.Size = New System.Drawing.Size(234, 20)
@@ -146,6 +156,7 @@ Partial Class IndividualStaff
         '
         'TextBoxLastName
         '
+        Me.TextBoxLastName.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceStaff, "Staff_LastName", True))
         Me.TextBoxLastName.Location = New System.Drawing.Point(175, 103)
         Me.TextBoxLastName.Name = "TextBoxLastName"
         Me.TextBoxLastName.Size = New System.Drawing.Size(234, 20)
@@ -164,6 +175,7 @@ Partial Class IndividualStaff
         '
         'TextBoxID
         '
+        Me.TextBoxID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceStaff, "Staff_ID", True))
         Me.TextBoxID.Enabled = False
         Me.TextBoxID.Location = New System.Drawing.Point(175, 69)
         Me.TextBoxID.Name = "TextBoxID"
@@ -192,6 +204,29 @@ Partial Class IndividualStaff
         Me.LabelPassword.TabIndex = 42
         Me.LabelPassword.Text = "Password:"
         '
+        'Ist2gqDataSet1
+        '
+        Me.Ist2gqDataSet1.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.tblCustomerTableAdapter = Nothing
+        Me.TableAdapterManager1.tblInvoiceTableAdapter = Nothing
+        Me.TableAdapterManager1.tblProductTableAdapter = Nothing
+        Me.TableAdapterManager1.tblStaffTableAdapter = Me.TblStaffTableAdapter1
+        Me.TableAdapterManager1.UpdateOrder = Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
+        'TblStaffTableAdapter1
+        '
+        Me.TblStaffTableAdapter1.ClearBeforeFill = True
+        '
+        'BindingSourceStaff
+        '
+        Me.BindingSourceStaff.DataMember = "tblStaff"
+        Me.BindingSourceStaff.DataSource = Me.Ist2gqDataSet1
+        '
         'IndividualStaff
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
@@ -218,6 +253,8 @@ Partial Class IndividualStaff
         Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "IndividualStaff"
         Me.Text = "Employee"
+        CType(Me.Ist2gqDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BindingSourceStaff, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -239,4 +276,8 @@ Partial Class IndividualStaff
     Friend WithEvents TextBoxID As TextBox
     Friend WithEvents LabelID As Label
     Friend WithEvents LabelPassword As Label
+    Friend WithEvents BindingSourceStaff As BindingSource
+    Friend WithEvents Ist2gqDataSet1 As ist2gqDataSet
+    Friend WithEvents TableAdapterManager1 As ist2gqDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents TblStaffTableAdapter1 As ist2gqDataSetTableAdapters.tblStaffTableAdapter
 End Class

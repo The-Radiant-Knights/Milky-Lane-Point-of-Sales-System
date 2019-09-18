@@ -23,3 +23,4 @@ C:\Users\Michael\OneDrive\University Work\Year 2\Semester 2\Istn212\Milky Lane P
 C:\Users\Michael\OneDrive\University Work\Year 2\Semester 2\Istn212\Milky Lane Point of Sales System\Milky Lane Point of Sales System\obj\Debug\Milky_Lane_Point_of_Sales_System.AddStaff.resources
 C:\Users\Michael\OneDrive\University Work\Year 2\Semester 2\Istn212\Milky Lane Point of Sales System\Milky Lane Point of Sales System\obj\Debug\Milky_Lane_Point_of_Sales_System.IndividualStaff.resources
 C:\Users\Michael\OneDrive\University Work\Year 2\Semester 2\Istn212\Milky Lane Point of Sales System\Milky Lane Point of Sales System\obj\Debug\Milky_Lane_Point_of_Sales_System.Staff.resources
+C:\Users\Michael\OneDrive\University Work\Year 2\Semester 2\Istn212\Milky Lane Point of Sales System\Milky Lane Point of Sales System\obj\Debug\Milky_Lane_Point_of_Sales_System.SplashScreen.resources

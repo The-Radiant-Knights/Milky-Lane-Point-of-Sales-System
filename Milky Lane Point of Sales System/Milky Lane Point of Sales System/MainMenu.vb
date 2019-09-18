@@ -9,6 +9,13 @@
 
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LabelDate.Text = Date.UtcNow.Date
+        LabelUsername.Text = Login.userType
+
+        If Login.userType <> "Manager" Then
+            ButtonProducts.Enabled = False
+            ButtonStaff.Enabled = False
+            ButtonTransactions.Enabled = False
+        End If
         'Set Username label
     End Sub
 

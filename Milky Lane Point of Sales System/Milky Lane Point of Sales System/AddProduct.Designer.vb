@@ -26,19 +26,19 @@ Partial Class AddProduct
         Me.ButtonAddProduct = New System.Windows.Forms.Button()
         Me.LabelAddCustomer = New System.Windows.Forms.Label()
         Me.TextBoxAmountSold = New System.Windows.Forms.TextBox()
+        Me.BindingSourceProduct = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ist2gqDataSet1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.labelAmountSold = New System.Windows.Forms.Label()
         Me.TextBoxPrice = New System.Windows.Forms.TextBox()
         Me.LabelLastPrice = New System.Windows.Forms.Label()
         Me.TextBoxDescription = New System.Windows.Forms.TextBox()
         Me.LabelFirstDescription = New System.Windows.Forms.Label()
-        Me.Ist2gqDataSet1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.TableAdapterManager1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.TblProductTableAdapter1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblProductTableAdapter()
-        Me.BindingSourceProduct = New System.Windows.Forms.BindingSource(Me.components)
         Me.LabelID = New System.Windows.Forms.Label()
         Me.TextBoxID = New System.Windows.Forms.TextBox()
-        CType(Me.Ist2gqDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSourceProduct, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonAddProduct
@@ -70,6 +70,16 @@ Partial Class AddProduct
         Me.TextBoxAmountSold.Size = New System.Drawing.Size(234, 20)
         Me.TextBoxAmountSold.TabIndex = 15
         Me.TextBoxAmountSold.Text = "0"
+        '
+        'BindingSourceProduct
+        '
+        Me.BindingSourceProduct.DataMember = "tblProduct"
+        Me.BindingSourceProduct.DataSource = Me.Ist2gqDataSet1
+        '
+        'Ist2gqDataSet1
+        '
+        Me.Ist2gqDataSet1.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'labelAmountSold
         '
@@ -120,11 +130,6 @@ Partial Class AddProduct
         Me.LabelFirstDescription.TabIndex = 10
         Me.LabelFirstDescription.Text = "Description:"
         '
-        'Ist2gqDataSet1
-        '
-        Me.Ist2gqDataSet1.DataSetName = "ist2gqDataSet"
-        Me.Ist2gqDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'TableAdapterManager1
         '
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
@@ -137,11 +142,6 @@ Partial Class AddProduct
         'TblProductTableAdapter1
         '
         Me.TblProductTableAdapter1.ClearBeforeFill = True
-        '
-        'BindingSourceProduct
-        '
-        Me.BindingSourceProduct.DataMember = "tblProduct"
-        Me.BindingSourceProduct.DataSource = Me.Ist2gqDataSet1
         '
         'LabelID
         '
@@ -183,8 +183,8 @@ Partial Class AddProduct
         Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "AddProduct"
         Me.Text = "Add Product"
-        CType(Me.Ist2gqDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSourceProduct, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

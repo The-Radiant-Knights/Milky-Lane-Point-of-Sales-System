@@ -31,19 +31,19 @@ Partial Class Staff
         Me.TextBoxSearch = New System.Windows.Forms.TextBox()
         Me.ButtonSearch = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
-        Me.TblStaffBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TblStaffTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblStaffTableAdapter()
-        Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.StaffIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StaffLastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StaffFirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StaffPasscodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StaffRoleDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TblStaffBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
+        Me.TblStaffTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblStaffTableAdapter()
+        Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.ButtonRefresh = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblStaffBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelStaff
@@ -126,29 +126,6 @@ Partial Class Staff
         Me.DataGridView1.Size = New System.Drawing.Size(558, 284)
         Me.DataGridView1.TabIndex = 8
         '
-        'Ist2gqDataSet
-        '
-        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
-        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TblStaffBindingSource
-        '
-        Me.TblStaffBindingSource.DataMember = "tblStaff"
-        Me.TblStaffBindingSource.DataSource = Me.Ist2gqDataSet
-        '
-        'TblStaffTableAdapter
-        '
-        Me.TblStaffTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.tblCustomerTableAdapter = Nothing
-        Me.TableAdapterManager.tblInvoiceTableAdapter = Nothing
-        Me.TableAdapterManager.tblProductTableAdapter = Nothing
-        Me.TableAdapterManager.tblStaffTableAdapter = Me.TblStaffTableAdapter
-        Me.TableAdapterManager.UpdateOrder = Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'StaffIDDataGridViewTextBoxColumn
         '
         Me.StaffIDDataGridViewTextBoxColumn.DataPropertyName = "Staff_ID"
@@ -180,6 +157,29 @@ Partial Class Staff
         Me.StaffRoleDataGridViewTextBoxColumn.HeaderText = "Staff_Role"
         Me.StaffRoleDataGridViewTextBoxColumn.Name = "StaffRoleDataGridViewTextBoxColumn"
         '
+        'TblStaffBindingSource
+        '
+        Me.TblStaffBindingSource.DataMember = "tblStaff"
+        Me.TblStaffBindingSource.DataSource = Me.Ist2gqDataSet
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TblStaffTableAdapter
+        '
+        Me.TblStaffTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.tblCustomerTableAdapter = Nothing
+        Me.TableAdapterManager.tblInvoiceTableAdapter = Nothing
+        Me.TableAdapterManager.tblProductTableAdapter = Nothing
+        Me.TableAdapterManager.tblStaffTableAdapter = Me.TblStaffTableAdapter
+        Me.TableAdapterManager.UpdateOrder = Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        '
         'ButtonRefresh
         '
         Me.ButtonRefresh.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -210,8 +210,8 @@ Partial Class Staff
         Me.Name = "Staff"
         Me.Text = "Staff"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblStaffBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

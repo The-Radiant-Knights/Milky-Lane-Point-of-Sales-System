@@ -41,13 +41,16 @@ Partial Class IndividualTransaction
         Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.TblInvoiceTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblInvoiceTableAdapter()
         Me.BindingSourceInvoice = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TextBoxID = New System.Windows.Forms.TextBox()
+        Me.LabelID = New System.Windows.Forms.Label()
         CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSourceInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DateTimePicker
         '
-        Me.DateTimePicker.Location = New System.Drawing.Point(189, 156)
+        Me.DateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.BindingSourceInvoice, "Invoice_Date", True))
+        Me.DateTimePicker.Location = New System.Drawing.Point(184, 205)
         Me.DateTimePicker.Name = "DateTimePicker"
         Me.DateTimePicker.Size = New System.Drawing.Size(234, 20)
         Me.DateTimePicker.TabIndex = 30
@@ -57,7 +60,7 @@ Partial Class IndividualTransaction
         Me.LabelTransaction.AutoSize = True
         Me.LabelTransaction.BackColor = System.Drawing.Color.Transparent
         Me.LabelTransaction.Font = New System.Drawing.Font("Arial Rounded MT Bold", 18.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTransaction.Location = New System.Drawing.Point(153, 24)
+        Me.LabelTransaction.Location = New System.Drawing.Point(148, 18)
         Me.LabelTransaction.Name = "LabelTransaction"
         Me.LabelTransaction.Size = New System.Drawing.Size(150, 28)
         Me.LabelTransaction.TabIndex = 28
@@ -65,7 +68,8 @@ Partial Class IndividualTransaction
         '
         'TextBoxStaffID
         '
-        Me.TextBoxStaffID.Location = New System.Drawing.Point(189, 193)
+        Me.TextBoxStaffID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceInvoice, "Staff_ID", True))
+        Me.TextBoxStaffID.Location = New System.Drawing.Point(184, 242)
         Me.TextBoxStaffID.Name = "TextBoxStaffID"
         Me.TextBoxStaffID.Size = New System.Drawing.Size(234, 20)
         Me.TextBoxStaffID.TabIndex = 27
@@ -75,7 +79,7 @@ Partial Class IndividualTransaction
         Me.LabelStaffID.AutoSize = True
         Me.LabelStaffID.BackColor = System.Drawing.Color.Transparent
         Me.LabelStaffID.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelStaffID.Location = New System.Drawing.Point(34, 196)
+        Me.LabelStaffID.Location = New System.Drawing.Point(29, 245)
         Me.LabelStaffID.Name = "LabelStaffID"
         Me.LabelStaffID.Size = New System.Drawing.Size(67, 17)
         Me.LabelStaffID.TabIndex = 26
@@ -86,7 +90,7 @@ Partial Class IndividualTransaction
         Me.labelDate.AutoSize = True
         Me.labelDate.BackColor = System.Drawing.Color.Transparent
         Me.labelDate.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelDate.Location = New System.Drawing.Point(34, 156)
+        Me.labelDate.Location = New System.Drawing.Point(29, 205)
         Me.labelDate.Name = "labelDate"
         Me.labelDate.Size = New System.Drawing.Size(47, 17)
         Me.labelDate.TabIndex = 25
@@ -94,7 +98,8 @@ Partial Class IndividualTransaction
         '
         'TextBoxAmountPaid
         '
-        Me.TextBoxAmountPaid.Location = New System.Drawing.Point(189, 111)
+        Me.TextBoxAmountPaid.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceInvoice, "Amount_Paid", True))
+        Me.TextBoxAmountPaid.Location = New System.Drawing.Point(184, 160)
         Me.TextBoxAmountPaid.Name = "TextBoxAmountPaid"
         Me.TextBoxAmountPaid.Size = New System.Drawing.Size(234, 20)
         Me.TextBoxAmountPaid.TabIndex = 24
@@ -104,7 +109,7 @@ Partial Class IndividualTransaction
         Me.LabelAmountPaid.AutoSize = True
         Me.LabelAmountPaid.BackColor = System.Drawing.Color.Transparent
         Me.LabelAmountPaid.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelAmountPaid.Location = New System.Drawing.Point(34, 114)
+        Me.LabelAmountPaid.Location = New System.Drawing.Point(29, 163)
         Me.LabelAmountPaid.Name = "LabelAmountPaid"
         Me.LabelAmountPaid.Size = New System.Drawing.Size(105, 17)
         Me.LabelAmountPaid.TabIndex = 23
@@ -112,7 +117,8 @@ Partial Class IndividualTransaction
         '
         'TextBoxAmount
         '
-        Me.TextBoxAmount.Location = New System.Drawing.Point(189, 76)
+        Me.TextBoxAmount.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceInvoice, "Invoice_Amount", True))
+        Me.TextBoxAmount.Location = New System.Drawing.Point(184, 125)
         Me.TextBoxAmount.Name = "TextBoxAmount"
         Me.TextBoxAmount.Size = New System.Drawing.Size(234, 20)
         Me.TextBoxAmount.TabIndex = 22
@@ -122,7 +128,7 @@ Partial Class IndividualTransaction
         Me.LabelFirstAmount.AutoSize = True
         Me.LabelFirstAmount.BackColor = System.Drawing.Color.Transparent
         Me.LabelFirstAmount.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelFirstAmount.Location = New System.Drawing.Point(34, 76)
+        Me.LabelFirstAmount.Location = New System.Drawing.Point(29, 125)
         Me.LabelFirstAmount.Name = "LabelFirstAmount"
         Me.LabelFirstAmount.Size = New System.Drawing.Size(69, 17)
         Me.LabelFirstAmount.TabIndex = 21
@@ -131,7 +137,7 @@ Partial Class IndividualTransaction
         'ButtonNextTransaction
         '
         Me.ButtonNextTransaction.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonNextTransaction.Location = New System.Drawing.Point(235, 295)
+        Me.ButtonNextTransaction.Location = New System.Drawing.Point(230, 344)
         Me.ButtonNextTransaction.Name = "ButtonNextTransaction"
         Me.ButtonNextTransaction.Size = New System.Drawing.Size(129, 40)
         Me.ButtonNextTransaction.TabIndex = 34
@@ -141,7 +147,7 @@ Partial Class IndividualTransaction
         'ButtonAddTransaction
         '
         Me.ButtonAddTransaction.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonAddTransaction.Location = New System.Drawing.Point(293, 249)
+        Me.ButtonAddTransaction.Location = New System.Drawing.Point(288, 298)
         Me.ButtonAddTransaction.Name = "ButtonAddTransaction"
         Me.ButtonAddTransaction.Size = New System.Drawing.Size(129, 40)
         Me.ButtonAddTransaction.TabIndex = 33
@@ -151,7 +157,7 @@ Partial Class IndividualTransaction
         'ButtonRemoveTransaction
         '
         Me.ButtonRemoveTransaction.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonRemoveTransaction.Location = New System.Drawing.Point(158, 249)
+        Me.ButtonRemoveTransaction.Location = New System.Drawing.Point(153, 298)
         Me.ButtonRemoveTransaction.Name = "ButtonRemoveTransaction"
         Me.ButtonRemoveTransaction.Size = New System.Drawing.Size(129, 40)
         Me.ButtonRemoveTransaction.TabIndex = 32
@@ -161,7 +167,7 @@ Partial Class IndividualTransaction
         'ButtonUpdateTransaction
         '
         Me.ButtonUpdateTransaction.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonUpdateTransaction.Location = New System.Drawing.Point(26, 249)
+        Me.ButtonUpdateTransaction.Location = New System.Drawing.Point(21, 298)
         Me.ButtonUpdateTransaction.Name = "ButtonUpdateTransaction"
         Me.ButtonUpdateTransaction.Size = New System.Drawing.Size(126, 40)
         Me.ButtonUpdateTransaction.TabIndex = 31
@@ -171,7 +177,7 @@ Partial Class IndividualTransaction
         'ButtonPreviousTransaction
         '
         Me.ButtonPreviousTransaction.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonPreviousTransaction.Location = New System.Drawing.Point(100, 295)
+        Me.ButtonPreviousTransaction.Location = New System.Drawing.Point(95, 344)
         Me.ButtonPreviousTransaction.Name = "ButtonPreviousTransaction"
         Me.ButtonPreviousTransaction.Size = New System.Drawing.Size(129, 40)
         Me.ButtonPreviousTransaction.TabIndex = 35
@@ -196,13 +202,40 @@ Partial Class IndividualTransaction
         '
         Me.TblInvoiceTableAdapter.ClearBeforeFill = True
         '
+        'BindingSourceInvoice
+        '
+        Me.BindingSourceInvoice.DataMember = "tblInvoice"
+        Me.BindingSourceInvoice.DataSource = Me.Ist2gqDataSet
+        '
+        'TextBoxID
+        '
+        Me.TextBoxID.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.BindingSourceInvoice, "Invoice_No", True))
+        Me.TextBoxID.Enabled = False
+        Me.TextBoxID.Location = New System.Drawing.Point(183, 83)
+        Me.TextBoxID.Name = "TextBoxID"
+        Me.TextBoxID.Size = New System.Drawing.Size(234, 20)
+        Me.TextBoxID.TabIndex = 36
+        '
+        'LabelID
+        '
+        Me.LabelID.AutoSize = True
+        Me.LabelID.BackColor = System.Drawing.Color.Transparent
+        Me.LabelID.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelID.Location = New System.Drawing.Point(29, 82)
+        Me.LabelID.Name = "LabelID"
+        Me.LabelID.Size = New System.Drawing.Size(29, 17)
+        Me.LabelID.TabIndex = 37
+        Me.LabelID.Text = "ID:"
+        '
         'IndividualTransaction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Milky_Lane_Point_of_Sales_System.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(452, 361)
+        Me.ClientSize = New System.Drawing.Size(452, 402)
+        Me.Controls.Add(Me.LabelID)
+        Me.Controls.Add(Me.TextBoxID)
         Me.Controls.Add(Me.ButtonPreviousTransaction)
         Me.Controls.Add(Me.ButtonNextTransaction)
         Me.Controls.Add(Me.ButtonAddTransaction)
@@ -245,4 +278,6 @@ Partial Class IndividualTransaction
     Friend WithEvents TableAdapterManager As ist2gqDataSetTableAdapters.TableAdapterManager
     Friend WithEvents TblInvoiceTableAdapter As ist2gqDataSetTableAdapters.tblInvoiceTableAdapter
     Friend WithEvents BindingSourceInvoice As BindingSource
+    Friend WithEvents TextBoxID As TextBox
+    Friend WithEvents LabelID As Label
 End Class

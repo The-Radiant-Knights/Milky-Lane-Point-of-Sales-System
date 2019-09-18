@@ -3,7 +3,7 @@
         Try
             BindingSourceProduct.EndEdit()
             TblProductTableAdapter1.Update(Ist2gqDataSet1)
-            MessageBox.Show("Product updated/added successfully")
+            MessageBox.Show("Customer updated/added successfully")
             Me.Close()
         Catch ex As Exception
             MessageBox.Show("Error Occurred")
