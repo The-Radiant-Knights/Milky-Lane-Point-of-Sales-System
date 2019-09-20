@@ -24,13 +24,6 @@ Partial Class Customer
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.ButtonSearch = New System.Windows.Forms.Button()
-        Me.TextBoxSearch = New System.Windows.Forms.TextBox()
-        Me.LabelSearch = New System.Windows.Forms.Label()
-        Me.ButtonAddCustomer = New System.Windows.Forms.Button()
-        Me.ButtonUpdate = New System.Windows.Forms.Button()
-        Me.ButtonRemoveCustomer = New System.Windows.Forms.Button()
-        Me.LabelCustomers = New System.Windows.Forms.Label()
         Me.CustomerPhoneNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustomerLastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustomerFirstNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,6 +31,13 @@ Partial Class Customer
         Me.CustomerPointsDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TblCustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
+        Me.ButtonSearch = New System.Windows.Forms.Button()
+        Me.TextBoxSearch = New System.Windows.Forms.TextBox()
+        Me.LabelSearch = New System.Windows.Forms.Label()
+        Me.ButtonAddCustomer = New System.Windows.Forms.Button()
+        Me.ButtonUpdate = New System.Windows.Forms.Button()
+        Me.ButtonRemoveCustomer = New System.Windows.Forms.Button()
+        Me.LabelCustomers = New System.Windows.Forms.Label()
         Me.TblCustomerTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblCustomerTableAdapter()
         Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.ButtonRefresh = New System.Windows.Forms.Button()
@@ -59,6 +59,51 @@ Partial Class Customer
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(558, 284)
         Me.DataGridView1.TabIndex = 0
+        '
+        'CustomerPhoneNoDataGridViewTextBoxColumn
+        '
+        Me.CustomerPhoneNoDataGridViewTextBoxColumn.DataPropertyName = "Customer_PhoneNo"
+        Me.CustomerPhoneNoDataGridViewTextBoxColumn.HeaderText = "Customer_PhoneNo"
+        Me.CustomerPhoneNoDataGridViewTextBoxColumn.Name = "CustomerPhoneNoDataGridViewTextBoxColumn"
+        Me.CustomerPhoneNoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustomerLastNameDataGridViewTextBoxColumn
+        '
+        Me.CustomerLastNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_LastName"
+        Me.CustomerLastNameDataGridViewTextBoxColumn.HeaderText = "Customer_LastName"
+        Me.CustomerLastNameDataGridViewTextBoxColumn.Name = "CustomerLastNameDataGridViewTextBoxColumn"
+        Me.CustomerLastNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustomerFirstNameDataGridViewTextBoxColumn
+        '
+        Me.CustomerFirstNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_FirstName"
+        Me.CustomerFirstNameDataGridViewTextBoxColumn.HeaderText = "Customer_FirstName"
+        Me.CustomerFirstNameDataGridViewTextBoxColumn.Name = "CustomerFirstNameDataGridViewTextBoxColumn"
+        Me.CustomerFirstNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustomerEmailDataGridViewTextBoxColumn
+        '
+        Me.CustomerEmailDataGridViewTextBoxColumn.DataPropertyName = "Customer_Email"
+        Me.CustomerEmailDataGridViewTextBoxColumn.HeaderText = "Customer_Email"
+        Me.CustomerEmailDataGridViewTextBoxColumn.Name = "CustomerEmailDataGridViewTextBoxColumn"
+        Me.CustomerEmailDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'CustomerPointsDataGridViewTextBoxColumn
+        '
+        Me.CustomerPointsDataGridViewTextBoxColumn.DataPropertyName = "Customer_Points"
+        Me.CustomerPointsDataGridViewTextBoxColumn.HeaderText = "Customer_Points"
+        Me.CustomerPointsDataGridViewTextBoxColumn.Name = "CustomerPointsDataGridViewTextBoxColumn"
+        Me.CustomerPointsDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'TblCustomerBindingSource
+        '
+        Me.TblCustomerBindingSource.DataMember = "tblCustomer"
+        Me.TblCustomerBindingSource.DataSource = Me.Ist2gqDataSet
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ButtonSearch
         '
@@ -128,51 +173,6 @@ Partial Class Customer
         Me.LabelCustomers.Size = New System.Drawing.Size(128, 24)
         Me.LabelCustomers.TabIndex = 7
         Me.LabelCustomers.Text = "Customers:"
-        '
-        'CustomerPhoneNoDataGridViewTextBoxColumn
-        '
-        Me.CustomerPhoneNoDataGridViewTextBoxColumn.DataPropertyName = "Customer_PhoneNo"
-        Me.CustomerPhoneNoDataGridViewTextBoxColumn.HeaderText = "Customer_PhoneNo"
-        Me.CustomerPhoneNoDataGridViewTextBoxColumn.Name = "CustomerPhoneNoDataGridViewTextBoxColumn"
-        Me.CustomerPhoneNoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CustomerLastNameDataGridViewTextBoxColumn
-        '
-        Me.CustomerLastNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_LastName"
-        Me.CustomerLastNameDataGridViewTextBoxColumn.HeaderText = "Customer_LastName"
-        Me.CustomerLastNameDataGridViewTextBoxColumn.Name = "CustomerLastNameDataGridViewTextBoxColumn"
-        Me.CustomerLastNameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CustomerFirstNameDataGridViewTextBoxColumn
-        '
-        Me.CustomerFirstNameDataGridViewTextBoxColumn.DataPropertyName = "Customer_FirstName"
-        Me.CustomerFirstNameDataGridViewTextBoxColumn.HeaderText = "Customer_FirstName"
-        Me.CustomerFirstNameDataGridViewTextBoxColumn.Name = "CustomerFirstNameDataGridViewTextBoxColumn"
-        Me.CustomerFirstNameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CustomerEmailDataGridViewTextBoxColumn
-        '
-        Me.CustomerEmailDataGridViewTextBoxColumn.DataPropertyName = "Customer_Email"
-        Me.CustomerEmailDataGridViewTextBoxColumn.HeaderText = "Customer_Email"
-        Me.CustomerEmailDataGridViewTextBoxColumn.Name = "CustomerEmailDataGridViewTextBoxColumn"
-        Me.CustomerEmailDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'CustomerPointsDataGridViewTextBoxColumn
-        '
-        Me.CustomerPointsDataGridViewTextBoxColumn.DataPropertyName = "Customer_Points"
-        Me.CustomerPointsDataGridViewTextBoxColumn.HeaderText = "Customer_Points"
-        Me.CustomerPointsDataGridViewTextBoxColumn.Name = "CustomerPointsDataGridViewTextBoxColumn"
-        Me.CustomerPointsDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'TblCustomerBindingSource
-        '
-        Me.TblCustomerBindingSource.DataMember = "tblCustomer"
-        Me.TblCustomerBindingSource.DataSource = Me.Ist2gqDataSet
-        '
-        'Ist2gqDataSet
-        '
-        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
-        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TblCustomerTableAdapter
         '

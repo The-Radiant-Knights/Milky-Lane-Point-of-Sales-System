@@ -34,4 +34,10 @@
             MessageBox.Show("Deletion Cancelled")
         End If
     End Sub
+
+    Private Sub TextBoxSearch_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSearch.TextChanged
+        Dim search As String = "%" + TextBoxSearch.Text + "%"
+
+        Me.TblStaffTableAdapter.FillByName(Me.Ist2gqDataSet.tblStaff, search, search)
+    End Sub
 End Class
