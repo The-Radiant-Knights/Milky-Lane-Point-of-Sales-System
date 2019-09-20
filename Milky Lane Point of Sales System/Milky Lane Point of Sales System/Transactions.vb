@@ -35,4 +35,15 @@
 
         Me.TblInvoiceTableAdapter.FillByInvoiceNo(Me.Ist2gqDataSet.tblInvoice, search)
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
+        Try
+            Dim search As Int16 = Convert.ToInt16(TextBox1.Text.Trim())
+
+            Me.TblInvoiceTableAdapter.FillByInvoiceNo(Me.Ist2gqDataSet.tblInvoice, search)
+        Catch ex As Exception
+            MessageBox.Show("An Error Occurred!")
+            TextBox1.Clear()
+        End Try
+    End Sub
 End Class

@@ -7,6 +7,10 @@
         'TODO: This line of code loads data into the 'Ist2gqDataSet.tblProduct' table. You can move, or remove it, as needed.
         Me.TblProductTableAdapter.Fill(Me.Ist2gqDataSet.tblProduct)
 
+        If (Date.Today.Month.Equals("January") And Date.Today.Day.Equals(1)) Then
+            Me.TblCustomerTableAdapter.setPointsToZero()
+        End If
+
     End Sub
 
     Private Sub ButtonSearch_Click(sender As Object, e As EventArgs) Handles ButtonSearch.Click
@@ -119,4 +123,9 @@
         TblCustomerTableAdapter.updateLoyaltyPoints(numPoints.ToString(), TextBoxPhoneNumber.Text)
     End Sub
 
+    Private Sub TextBoxSearch_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSearch.TextChanged
+        Dim search As String = "%" + TextBoxSearch.Text + "%"
+
+        Me.TblProductTableAdapter.FillByDescription(Me.Ist2gqDataSet.tblProduct, search)
+    End Sub
 End Class

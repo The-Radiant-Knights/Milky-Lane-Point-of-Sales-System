@@ -31,8 +31,6 @@ Partial Class Transactions
         Me.TextBoxSearch = New System.Windows.Forms.TextBox()
         Me.ButtonSearch = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ButtonRefresh = New System.Windows.Forms.Button()
         Me.InvoiceNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InvoiceAmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AmountPaidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,6 +38,8 @@ Partial Class Transactions
         Me.StaffIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TblInvoiceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ButtonRefresh = New System.Windows.Forms.Button()
         Me.TblInvoiceTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblInvoiceTableAdapter()
         Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -127,23 +127,6 @@ Partial Class Transactions
         Me.DataGridView1.Size = New System.Drawing.Size(558, 284)
         Me.DataGridView1.TabIndex = 8
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(409, 29)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox1.TabIndex = 16
-        '
-        'ButtonRefresh
-        '
-        Me.ButtonRefresh.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonRefresh.Location = New System.Drawing.Point(339, 55)
-        Me.ButtonRefresh.Name = "ButtonRefresh"
-        Me.ButtonRefresh.Size = New System.Drawing.Size(110, 33)
-        Me.ButtonRefresh.TabIndex = 17
-        Me.ButtonRefresh.Text = "Refresh"
-        Me.ButtonRefresh.UseVisualStyleBackColor = True
-        '
         'InvoiceNoDataGridViewTextBoxColumn
         '
         Me.InvoiceNoDataGridViewTextBoxColumn.DataPropertyName = "Invoice_No"
@@ -184,6 +167,23 @@ Partial Class Transactions
         '
         Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
         Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(409, 29)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(176, 20)
+        Me.TextBox1.TabIndex = 16
+        '
+        'ButtonRefresh
+        '
+        Me.ButtonRefresh.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRefresh.Location = New System.Drawing.Point(339, 55)
+        Me.ButtonRefresh.Name = "ButtonRefresh"
+        Me.ButtonRefresh.Size = New System.Drawing.Size(110, 33)
+        Me.ButtonRefresh.TabIndex = 17
+        Me.ButtonRefresh.Text = "Refresh"
+        Me.ButtonRefresh.UseVisualStyleBackColor = True
         '
         'TblInvoiceTableAdapter
         '
