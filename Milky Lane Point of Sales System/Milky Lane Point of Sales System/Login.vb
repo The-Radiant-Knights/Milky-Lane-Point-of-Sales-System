@@ -1,6 +1,7 @@
 ﻿Public Class Login
 
     Public userType As String
+    Public userID As Integer
 
     Private Sub ButtonLogin_Click(sender As Object, e As EventArgs) Handles ButtonLogin.Click
 
@@ -9,6 +10,7 @@
 
             If num = 1 Then
                 userType = TblStaffTableAdapter.getRole(TextBoxLogin.Text)
+                userID = Integer.Parse(TextBoxLogin.Text)
                 MainMenu.Show()
                 Me.Close()
             Else

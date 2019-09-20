@@ -22,7 +22,7 @@
         Try
             BindingSourceProduct.EndEdit()
             TblProductTableAdapter1.Update(Ist2gqDataSet1)
-            MessageBox.Show("Customer updated/added successfully")
+            MessageBox.Show("Product updated/added successfully")
         Catch ex As Exception
             MessageBox.Show("Error Occurred")
         End Try

@@ -1,4 +1,7 @@
 ﻿Public Class MainMenu
+
+    Public userID As Integer
+
     Private Sub ButtonSales_Click(sender As Object, e As EventArgs) Handles ButtonSales.Click
         Sales.Show()
     End Sub
@@ -8,6 +11,9 @@
     End Sub
 
     Private Sub MainMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        userID = Login.userID
+
         LabelDate.Text = Date.UtcNow.Date
         LabelUsername.Text = Login.userType
 
