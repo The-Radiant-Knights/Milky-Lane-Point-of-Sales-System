@@ -155,12 +155,12 @@
     End Sub
 
     Private Sub PrintDocument_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument.PrintPage
-        e.Graphics.DrawString("----------Milky Lane----------", TextBoxAmountDue.Font, Brushes.Black, 110, 100)
+        e.Graphics.DrawString("             ----------Milky Lane----------", TextBoxAmountDue.Font, Brushes.Black, 110, 100)
         e.Graphics.DrawString("Description  Price", TextBoxAmountDue.Font, Brushes.Black, 100, 120)
 
         Dim y As Integer = 140
 
-        e.Graphics.DrawString("------------------------------", TextBoxAmountDue.Font, Brushes.Black, 100, y)
+        e.Graphics.DrawString("------------------------------------------------------------", TextBoxAmountDue.Font, Brushes.Black, 100, y)
         y += 20
 
         For Each row As DataGridViewRow In DataGridView1.Rows
@@ -168,7 +168,7 @@
             y += 20
         Next
 
-        e.Graphics.DrawString("------------------------------", TextBoxAmountDue.Font, Brushes.Black, 100, y)
+        e.Graphics.DrawString("------------------------------------------------------------", TextBoxAmountDue.Font, Brushes.Black, 100, y)
         y += 20
 
         e.Graphics.DrawString("Amount Due: " & TextBoxAmountDue.Text, TextBoxAmountDue.Font, Brushes.Black, 100, y)
@@ -180,7 +180,7 @@
         e.Graphics.DrawString("Change: " & TextBoxChange.Text, TextBoxAmountDue.Font, Brushes.Black, 100, y)
         y += 20
 
-        e.Graphics.DrawString("------------------------------", TextBoxAmountDue.Font, Brushes.Black, 100, y)
+        e.Graphics.DrawString("------------------------------------------------------------", TextBoxAmountDue.Font, Brushes.Black, 100, y)
         y += 20
 
         e.Graphics.DrawString("Cashier Name: " & TblStaffTableAdapter.getStaffFirstName(MainMenu.userID) & " " & TblStaffTableAdapter.getStaffLastName(MainMenu.userID), TextBoxAmountDue.Font, Brushes.Black, 100, y)
@@ -189,7 +189,7 @@
         e.Graphics.DrawString("Thank you for shopping with us!", TextBoxAmountDue.Font, Brushes.Black, 100, y)
         y += 20
 
-        e.Graphics.DrawString("------------------------------", TextBoxAmountDue.Font, Brushes.Black, 100, y)
+        e.Graphics.DrawString("------------------------------------------------------------", TextBoxAmountDue.Font, Brushes.Black, 100, y)
     End Sub
 
 End Class

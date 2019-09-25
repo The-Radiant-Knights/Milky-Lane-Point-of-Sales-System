@@ -23,24 +23,25 @@ Partial Class AddStaff
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddStaff))
         Me.ButtonAddEmployee = New System.Windows.Forms.Button()
         Me.LabelAddCustomer = New System.Windows.Forms.Label()
         Me.LabelRole = New System.Windows.Forms.Label()
         Me.TextBoxPassword = New System.Windows.Forms.TextBox()
+        Me.BindingSourceStaff = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.labelPassword = New System.Windows.Forms.Label()
         Me.TextBoxLastName = New System.Windows.Forms.TextBox()
         Me.LabelLastName = New System.Windows.Forms.Label()
         Me.TextBoxFirstName = New System.Windows.Forms.TextBox()
         Me.LabelFirstName = New System.Windows.Forms.Label()
         Me.ComboBoxRole = New System.Windows.Forms.ComboBox()
-        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.TableAdapterManager1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.TblStaffTableAdapter1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblStaffTableAdapter()
-        Me.BindingSourceStaff = New System.Windows.Forms.BindingSource(Me.components)
         Me.TextBoxID = New System.Windows.Forms.TextBox()
         Me.LabelID = New System.Windows.Forms.Label()
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSourceStaff, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonAddEmployee
@@ -82,6 +83,16 @@ Partial Class AddStaff
         Me.TextBoxPassword.Name = "TextBoxPassword"
         Me.TextBoxPassword.Size = New System.Drawing.Size(234, 20)
         Me.TextBoxPassword.TabIndex = 15
+        '
+        'BindingSourceStaff
+        '
+        Me.BindingSourceStaff.DataMember = "tblStaff"
+        Me.BindingSourceStaff.DataSource = Me.Ist2gqDataSet
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'labelPassword
         '
@@ -142,11 +153,6 @@ Partial Class AddStaff
         Me.ComboBoxRole.Size = New System.Drawing.Size(234, 20)
         Me.ComboBoxRole.TabIndex = 20
         '
-        'Ist2gqDataSet
-        '
-        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
-        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'TableAdapterManager1
         '
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
@@ -159,11 +165,6 @@ Partial Class AddStaff
         'TblStaffTableAdapter1
         '
         Me.TblStaffTableAdapter1.ClearBeforeFill = True
-        '
-        'BindingSourceStaff
-        '
-        Me.BindingSourceStaff.DataMember = "tblStaff"
-        Me.BindingSourceStaff.DataSource = Me.Ist2gqDataSet
         '
         'TextBoxID
         '
@@ -205,10 +206,11 @@ Partial Class AddStaff
         Me.Controls.Add(Me.TextBoxFirstName)
         Me.Controls.Add(Me.LabelFirstName)
         Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AddStaff"
         Me.Text = "Add Employee"
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSourceStaff, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

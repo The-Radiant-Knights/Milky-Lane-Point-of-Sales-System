@@ -22,13 +22,13 @@ Partial Class MainMenu
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMenu))
         Me.ButtonExit = New System.Windows.Forms.Button()
         Me.ButtonSales = New System.Windows.Forms.Button()
         Me.ButtonTransactions = New System.Windows.Forms.Button()
         Me.ButtonProducts = New System.Windows.Forms.Button()
         Me.ButtonStaff = New System.Windows.Forms.Button()
         Me.ButtonCustomers = New System.Windows.Forms.Button()
-        Me.ButtonSettings = New System.Windows.Forms.Button()
         Me.LabelDate = New System.Windows.Forms.Label()
         Me.LabelUsername = New System.Windows.Forms.Label()
         Me.LabelVersionNumber = New System.Windows.Forms.Label()
@@ -39,7 +39,7 @@ Partial Class MainMenu
         'ButtonExit
         '
         Me.ButtonExit.Font = New System.Drawing.Font("Arial Rounded MT Bold", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonExit.Location = New System.Drawing.Point(1, 410)
+        Me.ButtonExit.Location = New System.Drawing.Point(1, 340)
         Me.ButtonExit.Name = "ButtonExit"
         Me.ButtonExit.Size = New System.Drawing.Size(181, 73)
         Me.ButtonExit.TabIndex = 0
@@ -96,16 +96,6 @@ Partial Class MainMenu
         Me.ButtonCustomers.Text = "Customers"
         Me.ButtonCustomers.UseVisualStyleBackColor = True
         '
-        'ButtonSettings
-        '
-        Me.ButtonSettings.Font = New System.Drawing.Font("Arial Rounded MT Bold", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonSettings.Location = New System.Drawing.Point(1, 340)
-        Me.ButtonSettings.Name = "ButtonSettings"
-        Me.ButtonSettings.Size = New System.Drawing.Size(181, 73)
-        Me.ButtonSettings.TabIndex = 6
-        Me.ButtonSettings.Text = "Settings"
-        Me.ButtonSettings.UseVisualStyleBackColor = True
-        '
         'LabelDate
         '
         Me.LabelDate.AutoSize = True
@@ -131,7 +121,7 @@ Partial Class MainMenu
         Me.LabelVersionNumber.AutoSize = True
         Me.LabelVersionNumber.BackColor = System.Drawing.Color.Transparent
         Me.LabelVersionNumber.Font = New System.Drawing.Font("Arial Rounded MT Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelVersionNumber.Location = New System.Drawing.Point(518, 447)
+        Me.LabelVersionNumber.Location = New System.Drawing.Point(506, 376)
         Me.LabelVersionNumber.Name = "LabelVersionNumber"
         Me.LabelVersionNumber.Size = New System.Drawing.Size(162, 24)
         Me.LabelVersionNumber.TabIndex = 9
@@ -142,9 +132,9 @@ Partial Class MainMenu
         Me.PictureBoxLogo.BackColor = System.Drawing.Color.Transparent
         Me.PictureBoxLogo.BackgroundImage = Global.Milky_Lane_Point_of_Sales_System.My.Resources.Resources.MilkyLaneLogo
         Me.PictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBoxLogo.Location = New System.Drawing.Point(217, 36)
+        Me.PictureBoxLogo.Location = New System.Drawing.Point(235, 42)
         Me.PictureBoxLogo.Name = "PictureBoxLogo"
-        Me.PictureBoxLogo.Size = New System.Drawing.Size(427, 408)
+        Me.PictureBoxLogo.Size = New System.Drawing.Size(389, 331)
         Me.PictureBoxLogo.TabIndex = 10
         Me.PictureBoxLogo.TabStop = False
         '
@@ -155,12 +145,11 @@ Partial Class MainMenu
         Me.BackColor = System.Drawing.Color.White
         Me.BackgroundImage = Global.Milky_Lane_Point_of_Sales_System.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(680, 480)
-        Me.Controls.Add(Me.PictureBoxLogo)
-        Me.Controls.Add(Me.LabelVersionNumber)
-        Me.Controls.Add(Me.LabelUsername)
+        Me.ClientSize = New System.Drawing.Size(680, 412)
         Me.Controls.Add(Me.LabelDate)
-        Me.Controls.Add(Me.ButtonSettings)
+        Me.Controls.Add(Me.LabelUsername)
+        Me.Controls.Add(Me.LabelVersionNumber)
+        Me.Controls.Add(Me.PictureBoxLogo)
         Me.Controls.Add(Me.ButtonCustomers)
         Me.Controls.Add(Me.ButtonStaff)
         Me.Controls.Add(Me.ButtonProducts)
@@ -168,6 +157,7 @@ Partial Class MainMenu
         Me.Controls.Add(Me.ButtonSales)
         Me.Controls.Add(Me.ButtonExit)
         Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "MainMenu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Main Menu"
@@ -183,7 +173,6 @@ Partial Class MainMenu
     Friend WithEvents ButtonProducts As Button
     Friend WithEvents ButtonStaff As Button
     Friend WithEvents ButtonCustomers As Button
-    Friend WithEvents ButtonSettings As Button
     Friend WithEvents LabelDate As Label
     Friend WithEvents LabelUsername As Label
     Friend WithEvents LabelVersionNumber As Label

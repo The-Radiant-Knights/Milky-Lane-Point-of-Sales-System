@@ -23,6 +23,7 @@ Partial Class IndividualProduct
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IndividualProduct))
         Me.ButtonPreviousProduct = New System.Windows.Forms.Button()
         Me.ButtonNextProduct = New System.Windows.Forms.Button()
         Me.ButtonAddProduct = New System.Windows.Forms.Button()
@@ -229,6 +230,7 @@ Partial Class IndividualProduct
         Me.Controls.Add(Me.TextBoxID)
         Me.Controls.Add(Me.LabelID)
         Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "IndividualProduct"
         Me.Text = "Product"
         CType(Me.BindingSourceProduct, System.ComponentModel.ISupportInitialize).EndInit()

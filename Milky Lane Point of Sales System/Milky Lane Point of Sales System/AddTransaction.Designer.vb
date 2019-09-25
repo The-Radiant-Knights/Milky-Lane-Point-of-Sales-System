@@ -23,9 +23,12 @@ Partial Class AddTransaction
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddTransaction))
         Me.ButtonAddCustomer = New System.Windows.Forms.Button()
         Me.LabelAddTransaction = New System.Windows.Forms.Label()
         Me.TextBoxStaffID = New System.Windows.Forms.TextBox()
+        Me.BindingSourceInvoice = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.LabelStaffID = New System.Windows.Forms.Label()
         Me.labelDate = New System.Windows.Forms.Label()
         Me.TextBoxAmountPaid = New System.Windows.Forms.TextBox()
@@ -35,12 +38,10 @@ Partial Class AddTransaction
         Me.DateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.LabelID = New System.Windows.Forms.Label()
         Me.TextBoxID = New System.Windows.Forms.TextBox()
-        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.TableAdapterManager1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.TblInvoiceTableAdapter1 = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblInvoiceTableAdapter()
-        Me.BindingSourceInvoice = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSourceInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ButtonAddCustomer
@@ -71,6 +72,16 @@ Partial Class AddTransaction
         Me.TextBoxStaffID.Name = "TextBoxStaffID"
         Me.TextBoxStaffID.Size = New System.Drawing.Size(234, 20)
         Me.TextBoxStaffID.TabIndex = 17
+        '
+        'BindingSourceInvoice
+        '
+        Me.BindingSourceInvoice.DataMember = "tblInvoice"
+        Me.BindingSourceInvoice.DataSource = Me.Ist2gqDataSet
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'LabelStaffID
         '
@@ -160,11 +171,6 @@ Partial Class AddTransaction
         Me.TextBoxID.Size = New System.Drawing.Size(234, 20)
         Me.TextBoxID.TabIndex = 22
         '
-        'Ist2gqDataSet
-        '
-        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
-        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'TableAdapterManager1
         '
         Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
@@ -177,11 +183,6 @@ Partial Class AddTransaction
         'TblInvoiceTableAdapter1
         '
         Me.TblInvoiceTableAdapter1.ClearBeforeFill = True
-        '
-        'BindingSourceInvoice
-        '
-        Me.BindingSourceInvoice.DataMember = "tblInvoice"
-        Me.BindingSourceInvoice.DataSource = Me.Ist2gqDataSet
         '
         'AddTransaction
         '
@@ -203,10 +204,11 @@ Partial Class AddTransaction
         Me.Controls.Add(Me.TextBoxAmount)
         Me.Controls.Add(Me.LabelFirstAmount)
         Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AddTransaction"
         Me.Text = "Add Transaction"
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSourceInvoice, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

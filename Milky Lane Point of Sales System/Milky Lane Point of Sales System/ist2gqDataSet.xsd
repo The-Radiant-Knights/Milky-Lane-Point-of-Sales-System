@@ -218,17 +218,7 @@ WHERE        (Invoice_No LIKE @Param1)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByStaffID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByStaffID" GeneratorSourceName="FillByStaffID" GetMethodModifier="Public" GetMethodName="GetDataByStaffID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByStaffID" UserSourceName="FillByStaffID">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        tblInvoice.Invoice_No, tblInvoice.Invoice_Amount, tblInvoice.Amount_Paid, tblInvoice.Invoice_Date, tblStaff.Staff_FirstName, tblStaff.Staff_LastName
-FROM            tblInvoice INNER JOIN
-                         tblStaff ON tblInvoice.Staff_ID = tblStaff.Staff_ID</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="getAverageAmountPaid" Modifier="Public" Name="getAverageAmountPaid" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="getAverageAmountPaid">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="getAverageAmountPaid" Modifier="Public" Name="getAverageAmountPaid" QueryType="Scalar" ScalarCallRetval="System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="getAverageAmountPaid">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT AVG(Amount_Paid) FROM tblInvoice</CommandText>
@@ -236,7 +226,7 @@ FROM            tblInvoice INNER JOIN
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="getAverageDate" Modifier="Public" Name="getAverageDate" QueryType="Scalar" ScalarCallRetval="System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="getAverageDate">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="getAverageDate" Modifier="Public" Name="getAverageDate" QueryType="Scalar" ScalarCallRetval="System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="getAverageDate">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CAST(AVG(CAST(Invoice_Date AS FLOAT)) AS DATETIME) AS Expr1
@@ -253,7 +243,7 @@ FROM            tblInvoice</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="getNumberOfTransactions" Modifier="Public" Name="getNumberOfTransactions" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="getNumberOfTransactions">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="getNumberOfTransactions" Modifier="Public" Name="getNumberOfTransactions" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="getNumberOfTransactions">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT COUNT(*) FROM tblInvoice</CommandText>
@@ -261,7 +251,7 @@ FROM            tblInvoice</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNewInvoice" Modifier="Public" Name="InsertNewInvoice" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertNewInvoice">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertNewInvoice" Modifier="Public" Name="InsertNewInvoice" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="InsertNewInvoice">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[tblInvoice] ([Invoice_Amount], [Amount_Paid], [Invoice_Date], [Staff_ID]) VALUES (@Invoice_Amount, @Amount_Paid, @Invoice_Date, @Staff_ID);</CommandText>
@@ -448,7 +438,7 @@ WHERE        (Staff_LastName LIKE @Param1) OR
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="ist2gq.dbo.tblStaff" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getMostProductiveEmployee" Modifier="Public" Name="getMostProductiveEmployee" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="getMostProductiveEmployee">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="ist2gq.dbo.tblStaff" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getMostProductiveEmployee" Modifier="Public" Name="getMostProductiveEmployee" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="getMostProductiveEmployee">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Staff_ID
@@ -460,7 +450,7 @@ WHERE        (Staff_ID =
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="ist2gq.dbo.tblStaff" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getRole" Modifier="Public" Name="getRole" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="getRole">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="ist2gq.dbo.tblStaff" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getRole" Modifier="Public" Name="getRole" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="getRole">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Staff_Role
@@ -472,7 +462,7 @@ WHERE        (Staff_ID = @Param1)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="ist2gq.dbo.tblStaff" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getStaffFirstName" Modifier="Public" Name="getStaffFirstName" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="getStaffFirstName">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="ist2gq.dbo.tblStaff" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getStaffFirstName" Modifier="Public" Name="getStaffFirstName" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="getStaffFirstName">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Staff_FirstName
@@ -484,7 +474,7 @@ WHERE        (Staff_ID = @Param1)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="ist2gq.dbo.tblStaff" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getStaffLastName" Modifier="Public" Name="getStaffLastName" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="getStaffLastName">
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="ist2gq.dbo.tblStaff" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="getStaffLastName" Modifier="Public" Name="getStaffLastName" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="getStaffLastName">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Staff_LastName
@@ -506,7 +496,7 @@ WHERE        (Staff_ID = @Param1)</CommandText>
   <xs:element name="ist2gqDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ist2gqDataSet" msprop:Generator_UserDSName="ist2gqDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tblCustomer" msprop:Generator_TableClassName="tblCustomerDataTable" msprop:Generator_TableVarName="tabletblCustomer" msprop:Generator_RowChangedName="tblCustomerRowChanged" msprop:Generator_TablePropName="tblCustomer" msprop:Generator_RowDeletingName="tblCustomerRowDeleting" msprop:Generator_RowChangingName="tblCustomerRowChanging" msprop:Generator_RowEvHandlerName="tblCustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="tblCustomerRowDeleted" msprop:Generator_RowClassName="tblCustomerRow" msprop:Generator_UserTableName="tblCustomer" msprop:Generator_RowEvArgName="tblCustomerRowChangeEvent">
+        <xs:element name="tblCustomer" msprop:Generator_TableClassName="tblCustomerDataTable" msprop:Generator_TableVarName="tabletblCustomer" msprop:Generator_TablePropName="tblCustomer" msprop:Generator_RowDeletingName="tblCustomerRowDeleting" msprop:Generator_RowChangingName="tblCustomerRowChanging" msprop:Generator_RowEvHandlerName="tblCustomerRowChangeEventHandler" msprop:Generator_RowDeletedName="tblCustomerRowDeleted" msprop:Generator_UserTableName="tblCustomer" msprop:Generator_RowChangedName="tblCustomerRowChanged" msprop:Generator_RowEvArgName="tblCustomerRowChangeEvent" msprop:Generator_RowClassName="tblCustomerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Customer_PhoneNo" msprop:Generator_ColumnVarNameInTable="columnCustomer_PhoneNo" msprop:Generator_ColumnPropNameInRow="Customer_PhoneNo" msprop:Generator_ColumnPropNameInTable="Customer_PhoneNoColumn" msprop:Generator_UserColumnName="Customer_PhoneNo">
@@ -541,7 +531,7 @@ WHERE        (Staff_ID = @Param1)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblInvoice" msprop:Generator_TableClassName="tblInvoiceDataTable" msprop:Generator_TableVarName="tabletblInvoice" msprop:Generator_RowChangedName="tblInvoiceRowChanged" msprop:Generator_TablePropName="tblInvoice" msprop:Generator_RowDeletingName="tblInvoiceRowDeleting" msprop:Generator_RowChangingName="tblInvoiceRowChanging" msprop:Generator_RowEvHandlerName="tblInvoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="tblInvoiceRowDeleted" msprop:Generator_RowClassName="tblInvoiceRow" msprop:Generator_UserTableName="tblInvoice" msprop:Generator_RowEvArgName="tblInvoiceRowChangeEvent">
+        <xs:element name="tblInvoice" msprop:Generator_TableClassName="tblInvoiceDataTable" msprop:Generator_TableVarName="tabletblInvoice" msprop:Generator_TablePropName="tblInvoice" msprop:Generator_RowDeletingName="tblInvoiceRowDeleting" msprop:Generator_RowChangingName="tblInvoiceRowChanging" msprop:Generator_RowEvHandlerName="tblInvoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="tblInvoiceRowDeleted" msprop:Generator_UserTableName="tblInvoice" msprop:Generator_RowChangedName="tblInvoiceRowChanged" msprop:Generator_RowEvArgName="tblInvoiceRowChangeEvent" msprop:Generator_RowClassName="tblInvoiceRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Invoice_No" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnInvoice_No" msprop:Generator_ColumnPropNameInRow="Invoice_No" msprop:Generator_ColumnPropNameInTable="Invoice_NoColumn" msprop:Generator_UserColumnName="Invoice_No" type="xs:short" />
@@ -552,7 +542,7 @@ WHERE        (Staff_ID = @Param1)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblProduct" msprop:Generator_TableClassName="tblProductDataTable" msprop:Generator_TableVarName="tabletblProduct" msprop:Generator_RowChangedName="tblProductRowChanged" msprop:Generator_TablePropName="tblProduct" msprop:Generator_RowDeletingName="tblProductRowDeleting" msprop:Generator_RowChangingName="tblProductRowChanging" msprop:Generator_RowEvHandlerName="tblProductRowChangeEventHandler" msprop:Generator_RowDeletedName="tblProductRowDeleted" msprop:Generator_RowClassName="tblProductRow" msprop:Generator_UserTableName="tblProduct" msprop:Generator_RowEvArgName="tblProductRowChangeEvent">
+        <xs:element name="tblProduct" msprop:Generator_TableClassName="tblProductDataTable" msprop:Generator_TableVarName="tabletblProduct" msprop:Generator_TablePropName="tblProduct" msprop:Generator_RowDeletingName="tblProductRowDeleting" msprop:Generator_RowChangingName="tblProductRowChanging" msprop:Generator_RowEvHandlerName="tblProductRowChangeEventHandler" msprop:Generator_RowDeletedName="tblProductRowDeleted" msprop:Generator_UserTableName="tblProduct" msprop:Generator_RowChangedName="tblProductRowChanged" msprop:Generator_RowEvArgName="tblProductRowChangeEvent" msprop:Generator_RowClassName="tblProductRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Product_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnProduct_ID" msprop:Generator_ColumnPropNameInRow="Product_ID" msprop:Generator_ColumnPropNameInTable="Product_IDColumn" msprop:Generator_UserColumnName="Product_ID" type="xs:short" />
@@ -568,7 +558,7 @@ WHERE        (Staff_ID = @Param1)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tblStaff" msprop:Generator_TableClassName="tblStaffDataTable" msprop:Generator_TableVarName="tabletblStaff" msprop:Generator_RowChangedName="tblStaffRowChanged" msprop:Generator_TablePropName="tblStaff" msprop:Generator_RowDeletingName="tblStaffRowDeleting" msprop:Generator_RowChangingName="tblStaffRowChanging" msprop:Generator_RowEvHandlerName="tblStaffRowChangeEventHandler" msprop:Generator_RowDeletedName="tblStaffRowDeleted" msprop:Generator_RowClassName="tblStaffRow" msprop:Generator_UserTableName="tblStaff" msprop:Generator_RowEvArgName="tblStaffRowChangeEvent">
+        <xs:element name="tblStaff" msprop:Generator_TableClassName="tblStaffDataTable" msprop:Generator_TableVarName="tabletblStaff" msprop:Generator_TablePropName="tblStaff" msprop:Generator_RowDeletingName="tblStaffRowDeleting" msprop:Generator_RowChangingName="tblStaffRowChanging" msprop:Generator_RowEvHandlerName="tblStaffRowChangeEventHandler" msprop:Generator_RowDeletedName="tblStaffRowDeleted" msprop:Generator_UserTableName="tblStaff" msprop:Generator_RowChangedName="tblStaffRowChanged" msprop:Generator_RowEvArgName="tblStaffRowChangeEvent" msprop:Generator_RowClassName="tblStaffRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Staff_ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnStaff_ID" msprop:Generator_ColumnPropNameInRow="Staff_ID" msprop:Generator_ColumnPropNameInTable="Staff_IDColumn" msprop:Generator_UserColumnName="Staff_ID" type="xs:short" />
@@ -624,7 +614,7 @@ WHERE        (Staff_ID = @Param1)</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__tblInvoic__Staff__6D0D32F4" msdata:parent="tblStaff" msdata:child="tblInvoice" msdata:parentkey="Staff_ID" msdata:childkey="Staff_ID" msprop:Generator_UserChildTable="tblInvoice" msprop:Generator_ChildPropName="GettblInvoiceRows" msprop:Generator_UserRelationName="FK__tblInvoic__Staff__6D0D32F4" msprop:Generator_ParentPropName="tblStaffRow" msprop:Generator_RelationVarName="relationFK__tblInvoic__Staff__6D0D32F4" msprop:Generator_UserParentTable="tblStaff" />
+      <msdata:Relationship name="FK__tblInvoic__Staff__6D0D32F4" msdata:parent="tblStaff" msdata:child="tblInvoice" msdata:parentkey="Staff_ID" msdata:childkey="Staff_ID" msprop:Generator_UserChildTable="tblInvoice" msprop:Generator_ChildPropName="GettblInvoiceRows" msprop:Generator_UserRelationName="FK__tblInvoic__Staff__6D0D32F4" msprop:Generator_RelationVarName="relationFK__tblInvoic__Staff__6D0D32F4" msprop:Generator_UserParentTable="tblStaff" msprop:Generator_ParentPropName="tblStaffRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

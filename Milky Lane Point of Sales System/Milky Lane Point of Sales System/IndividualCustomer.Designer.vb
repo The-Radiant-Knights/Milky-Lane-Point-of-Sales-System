@@ -23,6 +23,7 @@ Partial Class IndividualCustomer
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IndividualCustomer))
         Me.LabelCustomer = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.BindingSourceCustomer = New System.Windows.Forms.BindingSource(Me.components)
@@ -249,6 +250,7 @@ Partial Class IndividualCustomer
         Me.Controls.Add(Me.LabelLastName)
         Me.Controls.Add(Me.TextBoxFirstName)
         Me.Controls.Add(Me.LabelFirstName)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "IndividualCustomer"
         Me.Text = "Customer"
         CType(Me.BindingSourceCustomer, System.ComponentModel.ISupportInitialize).EndInit()

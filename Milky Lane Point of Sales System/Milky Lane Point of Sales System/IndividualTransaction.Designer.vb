@@ -23,7 +23,10 @@ Partial Class IndividualTransaction
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IndividualTransaction))
         Me.DateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.BindingSourceInvoice = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.LabelTransaction = New System.Windows.Forms.Label()
         Me.TextBoxStaffID = New System.Windows.Forms.TextBox()
         Me.LabelStaffID = New System.Windows.Forms.Label()
@@ -37,14 +40,12 @@ Partial Class IndividualTransaction
         Me.ButtonRemoveTransaction = New System.Windows.Forms.Button()
         Me.ButtonUpdateTransaction = New System.Windows.Forms.Button()
         Me.ButtonPreviousTransaction = New System.Windows.Forms.Button()
-        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.TblInvoiceTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblInvoiceTableAdapter()
-        Me.BindingSourceInvoice = New System.Windows.Forms.BindingSource(Me.components)
         Me.TextBoxID = New System.Windows.Forms.TextBox()
         Me.LabelID = New System.Windows.Forms.Label()
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSourceInvoice, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DateTimePicker
@@ -54,6 +55,16 @@ Partial Class IndividualTransaction
         Me.DateTimePicker.Name = "DateTimePicker"
         Me.DateTimePicker.Size = New System.Drawing.Size(234, 20)
         Me.DateTimePicker.TabIndex = 30
+        '
+        'BindingSourceInvoice
+        '
+        Me.BindingSourceInvoice.DataMember = "tblInvoice"
+        Me.BindingSourceInvoice.DataSource = Me.Ist2gqDataSet
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'LabelTransaction
         '
@@ -184,11 +195,6 @@ Partial Class IndividualTransaction
         Me.ButtonPreviousTransaction.Text = "Previous Transaction"
         Me.ButtonPreviousTransaction.UseVisualStyleBackColor = True
         '
-        'Ist2gqDataSet
-        '
-        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
-        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
@@ -201,11 +207,6 @@ Partial Class IndividualTransaction
         'TblInvoiceTableAdapter
         '
         Me.TblInvoiceTableAdapter.ClearBeforeFill = True
-        '
-        'BindingSourceInvoice
-        '
-        Me.BindingSourceInvoice.DataMember = "tblInvoice"
-        Me.BindingSourceInvoice.DataSource = Me.Ist2gqDataSet
         '
         'TextBoxID
         '
@@ -251,10 +252,11 @@ Partial Class IndividualTransaction
         Me.Controls.Add(Me.TextBoxAmount)
         Me.Controls.Add(Me.LabelFirstAmount)
         Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "IndividualTransaction"
         Me.Text = "Transaction"
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSourceInvoice, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -23,6 +23,7 @@ Partial Class Customer
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Customer))
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.CustomerPhoneNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustomerLastNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -214,6 +215,7 @@ Partial Class Customer
         Me.Controls.Add(Me.ButtonSearch)
         Me.Controls.Add(Me.DataGridView1)
         Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Customer"
         Me.Text = "Customer"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

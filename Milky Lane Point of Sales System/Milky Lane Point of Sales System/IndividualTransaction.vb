@@ -11,8 +11,10 @@
         Try
             BindingSourceInvoice.EndEdit()
             TblInvoiceTableAdapter.Update(Ist2gqDataSet)
-            MessageBox.Show("Customer updated/added successfully")
+            MessageBox.Show("Transaction updated/added successfully")
         Catch ex As Exception
+            Dim numProducts As Integer = Ist2gqDataSet.tblInvoice.Rows.Count
+            TextBoxID.Text = numProducts
             MessageBox.Show("Error Occurred")
         End Try
     End Sub

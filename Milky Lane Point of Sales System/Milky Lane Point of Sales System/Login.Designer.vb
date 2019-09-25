@@ -29,7 +29,6 @@ Partial Class Login
         Me.TextBoxLogin = New System.Windows.Forms.TextBox()
         Me.TextBoxPassword = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.TblStaffTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblStaffTableAdapter()
@@ -83,6 +82,7 @@ Partial Class Login
         Me.TextBoxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBoxPassword.Size = New System.Drawing.Size(165, 20)
         Me.TextBoxPassword.TabIndex = 5
+        Me.TextBoxPassword.UseSystemPasswordChar = True
         '
         'PictureBox1
         '
@@ -94,17 +94,6 @@ Partial Class Login
         Me.PictureBox1.Size = New System.Drawing.Size(200, 152)
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(175, 215)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(83, 15)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Forgot Password?"
         '
         'Ist2gqDataSet
         '
@@ -132,13 +121,13 @@ Partial Class Login
         Me.BackgroundImage = Global.Milky_Lane_Point_of_Sales_System.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(308, 330)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.TextBoxPassword)
         Me.Controls.Add(Me.TextBoxLogin)
         Me.Controls.Add(Me.LabelPassword)
         Me.Controls.Add(Me.LabelLogin)
         Me.Controls.Add(Me.ButtonLogin)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Milky Lane"
@@ -154,7 +143,6 @@ Partial Class Login
     Friend WithEvents TextBoxLogin As TextBox
     Friend WithEvents TextBoxPassword As TextBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents Ist2gqDataSet As ist2gqDataSet
     Friend WithEvents TableAdapterManager As ist2gqDataSetTableAdapters.TableAdapterManager
     Friend WithEvents TblStaffTableAdapter As ist2gqDataSetTableAdapters.tblStaffTableAdapter

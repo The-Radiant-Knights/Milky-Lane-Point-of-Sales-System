@@ -7,7 +7,7 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="60" ViewPortY="34" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:tblCustomer" ZOrder="5" X="70" Y="70" Height="305" Width="254" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
-    <Shape ID="DesignTable:tblInvoice" ZOrder="3" X="363" Y="75" Height="267" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:tblInvoice" ZOrder="3" X="363" Y="75" Height="286" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:tblProduct" ZOrder="1" X="1005" Y="73" Height="229" Width="253" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:tblStaff" ZOrder="2" X="694" Y="69" Height="305" Width="271" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
   </Shapes>
@@ -16,15 +16,11 @@
       <RoutePoints>
         <Point>
           <X>694</X>
-          <Y>353</Y>
+          <Y>224</Y>
         </Point>
         <Point>
-          <X>645</X>
-          <Y>353</Y>
-        </Point>
-        <Point>
-          <X>645</X>
-          <Y>342</Y>
+          <X>663</X>
+          <Y>224</Y>
         </Point>
       </RoutePoints>
     </Connector>

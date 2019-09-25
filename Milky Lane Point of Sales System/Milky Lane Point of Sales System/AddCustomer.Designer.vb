@@ -23,8 +23,11 @@ Partial Class AddCustomer
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddCustomer))
         Me.LabelFirstName = New System.Windows.Forms.Label()
         Me.TextBoxFirstName = New System.Windows.Forms.TextBox()
+        Me.BindingSourceCustomer = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.LabelLastName = New System.Windows.Forms.Label()
         Me.TextBoxLastName = New System.Windows.Forms.TextBox()
         Me.labelContactNumber = New System.Windows.Forms.Label()
@@ -33,14 +36,12 @@ Partial Class AddCustomer
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.LabelAddCustomer = New System.Windows.Forms.Label()
         Me.ButtonAddCustomer = New System.Windows.Forms.Button()
-        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.TblCustomerTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblCustomerTableAdapter()
-        Me.BindingSourceCustomer = New System.Windows.Forms.BindingSource(Me.components)
         Me.TextBoxPoints = New System.Windows.Forms.TextBox()
         Me.LabelPoints = New System.Windows.Forms.Label()
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSourceCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelFirstName
@@ -61,6 +62,16 @@ Partial Class AddCustomer
         Me.TextBoxFirstName.Name = "TextBoxFirstName"
         Me.TextBoxFirstName.Size = New System.Drawing.Size(234, 20)
         Me.TextBoxFirstName.TabIndex = 1
+        '
+        'BindingSourceCustomer
+        '
+        Me.BindingSourceCustomer.DataMember = "tblCustomer"
+        Me.BindingSourceCustomer.DataSource = Me.Ist2gqDataSet
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'LabelLastName
         '
@@ -140,11 +151,6 @@ Partial Class AddCustomer
         Me.ButtonAddCustomer.Text = "Add Customer"
         Me.ButtonAddCustomer.UseVisualStyleBackColor = True
         '
-        'Ist2gqDataSet
-        '
-        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
-        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
@@ -157,11 +163,6 @@ Partial Class AddCustomer
         'TblCustomerTableAdapter
         '
         Me.TblCustomerTableAdapter.ClearBeforeFill = True
-        '
-        'BindingSourceCustomer
-        '
-        Me.BindingSourceCustomer.DataMember = "tblCustomer"
-        Me.BindingSourceCustomer.DataSource = Me.Ist2gqDataSet
         '
         'TextBoxPoints
         '
@@ -202,10 +203,11 @@ Partial Class AddCustomer
         Me.Controls.Add(Me.TextBoxFirstName)
         Me.Controls.Add(Me.LabelFirstName)
         Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "AddCustomer"
         Me.Text = "Add New Customer"
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSourceCustomer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

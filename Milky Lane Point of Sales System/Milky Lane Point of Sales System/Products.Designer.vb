@@ -23,6 +23,7 @@ Partial Class Products
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Products))
         Me.LabelProducts = New System.Windows.Forms.Label()
         Me.ButtonRemoveProduct = New System.Windows.Forms.Button()
         Me.ButtonUpdate = New System.Windows.Forms.Button()
@@ -200,6 +201,7 @@ Partial Class Products
         Me.Controls.Add(Me.ButtonSearch)
         Me.Controls.Add(Me.DataGridView1)
         Me.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Products"
         Me.Text = "Products"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
