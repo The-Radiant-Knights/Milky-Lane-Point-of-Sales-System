@@ -196,6 +196,12 @@
     <Compile Include="Transactions.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TransactionStatistics.Designer.vb">
+      <DependentUpon>TransactionStatistics.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionStatistics.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AddCustomer.resx">
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transactions.resx">
       <DependentUpon>Transactions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionStatistics.resx">
+      <DependentUpon>TransactionStatistics.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

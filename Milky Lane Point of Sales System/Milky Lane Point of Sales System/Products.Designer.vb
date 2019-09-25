@@ -31,18 +31,18 @@ Partial Class Products
         Me.TextBoxSearch = New System.Windows.Forms.TextBox()
         Me.ButtonSearch = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
-        Me.TblProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TblProductTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblProductTableAdapter()
-        Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.ProductIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AmountSoldDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TblProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
+        Me.TblProductTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblProductTableAdapter()
+        Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.ButtonRefresh = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LabelProducts
@@ -125,29 +125,6 @@ Partial Class Products
         Me.DataGridView1.Size = New System.Drawing.Size(558, 284)
         Me.DataGridView1.TabIndex = 8
         '
-        'Ist2gqDataSet
-        '
-        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
-        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'TblProductBindingSource
-        '
-        Me.TblProductBindingSource.DataMember = "tblProduct"
-        Me.TblProductBindingSource.DataSource = Me.Ist2gqDataSet
-        '
-        'TblProductTableAdapter
-        '
-        Me.TblProductTableAdapter.ClearBeforeFill = True
-        '
-        'TableAdapterManager
-        '
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
-        Me.TableAdapterManager.tblCustomerTableAdapter = Nothing
-        Me.TableAdapterManager.tblInvoiceTableAdapter = Nothing
-        Me.TableAdapterManager.tblProductTableAdapter = Me.TblProductTableAdapter
-        Me.TableAdapterManager.tblStaffTableAdapter = Nothing
-        Me.TableAdapterManager.UpdateOrder = Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        '
         'ProductIDDataGridViewTextBoxColumn
         '
         Me.ProductIDDataGridViewTextBoxColumn.DataPropertyName = "Product_ID"
@@ -172,6 +149,29 @@ Partial Class Products
         Me.AmountSoldDataGridViewTextBoxColumn.DataPropertyName = "Amount_Sold"
         Me.AmountSoldDataGridViewTextBoxColumn.HeaderText = "Amount_Sold"
         Me.AmountSoldDataGridViewTextBoxColumn.Name = "AmountSoldDataGridViewTextBoxColumn"
+        '
+        'TblProductBindingSource
+        '
+        Me.TblProductBindingSource.DataMember = "tblProduct"
+        Me.TblProductBindingSource.DataSource = Me.Ist2gqDataSet
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'TblProductTableAdapter
+        '
+        Me.TblProductTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.tblCustomerTableAdapter = Nothing
+        Me.TableAdapterManager.tblInvoiceTableAdapter = Nothing
+        Me.TableAdapterManager.tblProductTableAdapter = Me.TblProductTableAdapter
+        Me.TableAdapterManager.tblStaffTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
         'ButtonRefresh
         '
@@ -203,8 +203,8 @@ Partial Class Products
         Me.Name = "Products"
         Me.Text = "Products"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TblProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

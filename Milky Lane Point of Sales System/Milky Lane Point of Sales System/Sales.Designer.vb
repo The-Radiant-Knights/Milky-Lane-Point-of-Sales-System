@@ -33,10 +33,17 @@ Partial Class Sales
         Me.ButtonAdd = New System.Windows.Forms.Button()
         Me.ButtonRefresh = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.ProductIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AmountSoldDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TblProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
         Me.ButtonSearch = New System.Windows.Forms.Button()
         Me.LabelSearch = New System.Windows.Forms.Label()
         Me.TextBoxSearch = New System.Windows.Forms.TextBox()
         Me.GroupBoxInvoice = New System.Windows.Forms.GroupBox()
+        Me.ButtonPrintReceipt = New System.Windows.Forms.Button()
         Me.ButtonRemove = New System.Windows.Forms.Button()
         Me.ButtonCalculateChange = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -52,24 +59,20 @@ Partial Class Sales
         Me.TextBoxAmountDue = New System.Windows.Forms.TextBox()
         Me.ButtonPay = New System.Windows.Forms.Button()
         Me.BindingSourceCustomer = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ProductIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AmountSoldDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TblProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
+        Me.PrintDocument = New System.Drawing.Printing.PrintDocument()
         Me.TblProductTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblProductTableAdapter()
         Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
         Me.TblCustomerTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblCustomerTableAdapter()
         Me.TblInvoiceTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblInvoiceTableAdapter()
+        Me.TblStaffTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblStaffTableAdapter()
         Me.GroupBoxCustomerDetails.SuspendLayout()
         Me.GroupBoxProducts.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TblProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBoxInvoice.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BindingSourceCustomer, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TblProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBoxCustomerDetails
@@ -166,6 +169,41 @@ Partial Class Sales
         Me.DataGridView2.Size = New System.Drawing.Size(478, 223)
         Me.DataGridView2.TabIndex = 12
         '
+        'ProductIDDataGridViewTextBoxColumn
+        '
+        Me.ProductIDDataGridViewTextBoxColumn.DataPropertyName = "Product_ID"
+        Me.ProductIDDataGridViewTextBoxColumn.HeaderText = "Product_ID"
+        Me.ProductIDDataGridViewTextBoxColumn.Name = "ProductIDDataGridViewTextBoxColumn"
+        Me.ProductIDDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProductDescriptionDataGridViewTextBoxColumn
+        '
+        Me.ProductDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Product_Description"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.HeaderText = "Product_Description"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.Name = "ProductDescriptionDataGridViewTextBoxColumn"
+        '
+        'PriceDataGridViewTextBoxColumn
+        '
+        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
+        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Price"
+        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
+        '
+        'AmountSoldDataGridViewTextBoxColumn
+        '
+        Me.AmountSoldDataGridViewTextBoxColumn.DataPropertyName = "Amount_Sold"
+        Me.AmountSoldDataGridViewTextBoxColumn.HeaderText = "Amount_Sold"
+        Me.AmountSoldDataGridViewTextBoxColumn.Name = "AmountSoldDataGridViewTextBoxColumn"
+        '
+        'TblProductBindingSource
+        '
+        Me.TblProductBindingSource.DataMember = "tblProduct"
+        Me.TblProductBindingSource.DataSource = Me.Ist2gqDataSet
+        '
+        'Ist2gqDataSet
+        '
+        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
+        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'ButtonSearch
         '
         Me.ButtonSearch.Location = New System.Drawing.Point(374, 65)
@@ -195,6 +233,7 @@ Partial Class Sales
         'GroupBoxInvoice
         '
         Me.GroupBoxInvoice.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBoxInvoice.Controls.Add(Me.ButtonPrintReceipt)
         Me.GroupBoxInvoice.Controls.Add(Me.ButtonRemove)
         Me.GroupBoxInvoice.Controls.Add(Me.ButtonCalculateChange)
         Me.GroupBoxInvoice.Controls.Add(Me.DataGridView1)
@@ -212,6 +251,15 @@ Partial Class Sales
         Me.GroupBoxInvoice.TabStop = False
         Me.GroupBoxInvoice.Text = "Invoice"
         '
+        'ButtonPrintReceipt
+        '
+        Me.ButtonPrintReceipt.Location = New System.Drawing.Point(182, 464)
+        Me.ButtonPrintReceipt.Name = "ButtonPrintReceipt"
+        Me.ButtonPrintReceipt.Size = New System.Drawing.Size(121, 23)
+        Me.ButtonPrintReceipt.TabIndex = 14
+        Me.ButtonPrintReceipt.Text = "Print Receipt"
+        Me.ButtonPrintReceipt.UseVisualStyleBackColor = True
+        '
         'ButtonRemove
         '
         Me.ButtonRemove.Location = New System.Drawing.Point(324, 340)
@@ -223,7 +271,7 @@ Partial Class Sales
         '
         'ButtonCalculateChange
         '
-        Me.ButtonCalculateChange.Location = New System.Drawing.Point(150, 464)
+        Me.ButtonCalculateChange.Location = New System.Drawing.Point(37, 464)
         Me.ButtonCalculateChange.Name = "ButtonCalculateChange"
         Me.ButtonCalculateChange.Size = New System.Drawing.Size(121, 23)
         Me.ButtonCalculateChange.TabIndex = 12
@@ -326,40 +374,8 @@ Partial Class Sales
         Me.ButtonPay.Text = "Pay"
         Me.ButtonPay.UseVisualStyleBackColor = True
         '
-        'ProductIDDataGridViewTextBoxColumn
+        'PrintDocument
         '
-        Me.ProductIDDataGridViewTextBoxColumn.DataPropertyName = "Product_ID"
-        Me.ProductIDDataGridViewTextBoxColumn.HeaderText = "Product_ID"
-        Me.ProductIDDataGridViewTextBoxColumn.Name = "ProductIDDataGridViewTextBoxColumn"
-        Me.ProductIDDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ProductDescriptionDataGridViewTextBoxColumn
-        '
-        Me.ProductDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Product_Description"
-        Me.ProductDescriptionDataGridViewTextBoxColumn.HeaderText = "Product_Description"
-        Me.ProductDescriptionDataGridViewTextBoxColumn.Name = "ProductDescriptionDataGridViewTextBoxColumn"
-        '
-        'PriceDataGridViewTextBoxColumn
-        '
-        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
-        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Price"
-        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
-        '
-        'AmountSoldDataGridViewTextBoxColumn
-        '
-        Me.AmountSoldDataGridViewTextBoxColumn.DataPropertyName = "Amount_Sold"
-        Me.AmountSoldDataGridViewTextBoxColumn.HeaderText = "Amount_Sold"
-        Me.AmountSoldDataGridViewTextBoxColumn.Name = "AmountSoldDataGridViewTextBoxColumn"
-        '
-        'TblProductBindingSource
-        '
-        Me.TblProductBindingSource.DataMember = "tblProduct"
-        Me.TblProductBindingSource.DataSource = Me.Ist2gqDataSet
-        '
-        'Ist2gqDataSet
-        '
-        Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
-        Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TblProductTableAdapter
         '
@@ -382,6 +398,10 @@ Partial Class Sales
         '
         Me.TblInvoiceTableAdapter.ClearBeforeFill = True
         '
+        'TblStaffTableAdapter
+        '
+        Me.TblStaffTableAdapter.ClearBeforeFill = True
+        '
         'Sales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
@@ -401,12 +421,12 @@ Partial Class Sales
         Me.GroupBoxProducts.ResumeLayout(False)
         Me.GroupBoxProducts.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TblProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBoxInvoice.ResumeLayout(False)
         Me.GroupBoxInvoice.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BindingSourceCustomer, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TblProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -449,4 +469,7 @@ Partial Class Sales
     Friend WithEvents ButtonCalculateChange As Button
     Friend WithEvents ButtonRemove As Button
     Friend WithEvents TblInvoiceTableAdapter As ist2gqDataSetTableAdapters.tblInvoiceTableAdapter
+    Friend WithEvents ButtonPrintReceipt As Button
+    Friend WithEvents PrintDocument As Printing.PrintDocument
+    Friend WithEvents TblStaffTableAdapter As ist2gqDataSetTableAdapters.tblStaffTableAdapter
 End Class

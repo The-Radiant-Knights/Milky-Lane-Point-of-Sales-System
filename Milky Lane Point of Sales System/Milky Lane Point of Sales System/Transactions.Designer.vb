@@ -31,8 +31,6 @@ Partial Class Transactions
         Me.TextBoxSearch = New System.Windows.Forms.TextBox()
         Me.ButtonSearch = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ButtonRefresh = New System.Windows.Forms.Button()
         Me.InvoiceNoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InvoiceAmountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AmountPaidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,8 +38,11 @@ Partial Class Transactions
         Me.StaffIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TblInvoiceBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Ist2gqDataSet = New Milky_Lane_Point_of_Sales_System.ist2gqDataSet()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.ButtonRefresh = New System.Windows.Forms.Button()
         Me.TblInvoiceTableAdapter = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.tblInvoiceTableAdapter()
         Me.TableAdapterManager = New Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager()
+        Me.ButtonStatistics = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TblInvoiceBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Ist2gqDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,7 +62,7 @@ Partial Class Transactions
         'ButtonRemoveCustomer
         '
         Me.ButtonRemoveCustomer.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonRemoveCustomer.Location = New System.Drawing.Point(99, 396)
+        Me.ButtonRemoveCustomer.Location = New System.Drawing.Point(166, 400)
         Me.ButtonRemoveCustomer.Name = "ButtonRemoveCustomer"
         Me.ButtonRemoveCustomer.Size = New System.Drawing.Size(126, 43)
         Me.ButtonRemoveCustomer.TabIndex = 14
@@ -71,7 +72,7 @@ Partial Class Transactions
         'ButtonUpdate
         '
         Me.ButtonUpdate.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonUpdate.Location = New System.Drawing.Point(231, 396)
+        Me.ButtonUpdate.Location = New System.Drawing.Point(298, 400)
         Me.ButtonUpdate.Name = "ButtonUpdate"
         Me.ButtonUpdate.Size = New System.Drawing.Size(141, 43)
         Me.ButtonUpdate.TabIndex = 13
@@ -81,7 +82,7 @@ Partial Class Transactions
         'ButtonAddTransaction
         '
         Me.ButtonAddTransaction.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonAddTransaction.Location = New System.Drawing.Point(378, 396)
+        Me.ButtonAddTransaction.Location = New System.Drawing.Point(445, 400)
         Me.ButtonAddTransaction.Name = "ButtonAddTransaction"
         Me.ButtonAddTransaction.Size = New System.Drawing.Size(137, 43)
         Me.ButtonAddTransaction.TabIndex = 12
@@ -127,23 +128,6 @@ Partial Class Transactions
         Me.DataGridView1.Size = New System.Drawing.Size(558, 284)
         Me.DataGridView1.TabIndex = 8
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(409, 29)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox1.TabIndex = 16
-        '
-        'ButtonRefresh
-        '
-        Me.ButtonRefresh.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonRefresh.Location = New System.Drawing.Point(339, 55)
-        Me.ButtonRefresh.Name = "ButtonRefresh"
-        Me.ButtonRefresh.Size = New System.Drawing.Size(110, 33)
-        Me.ButtonRefresh.TabIndex = 17
-        Me.ButtonRefresh.Text = "Refresh"
-        Me.ButtonRefresh.UseVisualStyleBackColor = True
-        '
         'InvoiceNoDataGridViewTextBoxColumn
         '
         Me.InvoiceNoDataGridViewTextBoxColumn.DataPropertyName = "Invoice_No"
@@ -185,6 +169,23 @@ Partial Class Transactions
         Me.Ist2gqDataSet.DataSetName = "ist2gqDataSet"
         Me.Ist2gqDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(409, 29)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(176, 20)
+        Me.TextBox1.TabIndex = 16
+        '
+        'ButtonRefresh
+        '
+        Me.ButtonRefresh.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonRefresh.Location = New System.Drawing.Point(339, 55)
+        Me.ButtonRefresh.Name = "ButtonRefresh"
+        Me.ButtonRefresh.Size = New System.Drawing.Size(110, 33)
+        Me.ButtonRefresh.TabIndex = 17
+        Me.ButtonRefresh.Text = "Refresh"
+        Me.ButtonRefresh.UseVisualStyleBackColor = True
+        '
         'TblInvoiceTableAdapter
         '
         Me.TblInvoiceTableAdapter.ClearBeforeFill = True
@@ -198,6 +199,16 @@ Partial Class Transactions
         Me.TableAdapterManager.tblStaffTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Milky_Lane_Point_of_Sales_System.ist2gqDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'ButtonStatistics
+        '
+        Me.ButtonStatistics.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonStatistics.Location = New System.Drawing.Point(28, 400)
+        Me.ButtonStatistics.Name = "ButtonStatistics"
+        Me.ButtonStatistics.Size = New System.Drawing.Size(126, 43)
+        Me.ButtonStatistics.TabIndex = 18
+        Me.ButtonStatistics.Text = "Statistics"
+        Me.ButtonStatistics.UseVisualStyleBackColor = True
+        '
         'Transactions
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
@@ -205,6 +216,7 @@ Partial Class Transactions
         Me.BackgroundImage = Global.Milky_Lane_Point_of_Sales_System.My.Resources.Resources.Background
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(615, 466)
+        Me.Controls.Add(Me.ButtonStatistics)
         Me.Controls.Add(Me.ButtonRefresh)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.LabelTransactions)
@@ -245,4 +257,5 @@ Partial Class Transactions
     Friend WithEvents InvoiceDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents StaffIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ButtonRefresh As Button
+    Friend WithEvents ButtonStatistics As Button
 End Class

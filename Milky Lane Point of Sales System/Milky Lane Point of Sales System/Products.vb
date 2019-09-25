@@ -34,4 +34,10 @@
 
         Me.TblProductTableAdapter.FillByDescription(Me.Ist2gqDataSet.tblProduct, search)
     End Sub
+
+    Private Sub TextBoxSearch_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSearch.TextChanged
+        Dim search As String = "%" + TextBoxSearch.Text + "%"
+
+        Me.TblProductTableAdapter.FillByDescription(Me.Ist2gqDataSet.tblProduct, search)
+    End Sub
 End Class
